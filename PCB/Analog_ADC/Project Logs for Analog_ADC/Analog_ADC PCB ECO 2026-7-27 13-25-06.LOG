@@ -1,0 +1,12 @@
+Added Component: Designator=MH1(MOUNT_PAD_L-M3)
+Added Component: Designator=MH2(MOUNT_PAD_L-M3)
+Added Component: Designator=MH3(MOUNT_PAD_L-M3)
+Added Component: Designator=MH4(MOUNT_PAD_L-M3)
+Added Pin To Net: NetName=AGND Pin=MH1-1
+Added Pin To Net: NetName=AGND Pin=MH2-1
+Added Pin To Net: NetName=AGND Pin=MH3-1
+Added Pin To Net: NetName=AGND Pin=MH4-1
+Added Member To Class: ClassName=Analog Member=Component MH1 Mounting Hole (Screw)
+Added Member To Class: ClassName=Analog Member=Component MH2 Mounting Hole (Screw)
+Added Member To Class: ClassName=Analog Member=Component MH3 Mounting Hole (Screw)
+Added Member To Class: ClassName=Analog Member=Component MH4 Mounting Hole (Screw)

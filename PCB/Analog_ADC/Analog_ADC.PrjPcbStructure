@@ -1,0 +1,5 @@
+Record=TopLevelDocument|FileName=Analog.SchDoc|SheetNumber=1
+Record=SheetSymbol|SourceDocument=Analog.SchDoc|Designator=ADC|SchDesignator=ADC|FileName=ADC.SchDoc|SheetNumber=5|SymbolType=Normal|RawFileName=ADC.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Analog.SchDoc|Designator=BAMP|SchDesignator=BAMP|FileName=BAMP.SchDoc|SheetNumber=2|SymbolType=Normal|RawFileName=BAMP.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Analog.SchDoc|Designator=Peakhold|SchDesignator=Peakhold|FileName=Peakhold.SchDoc|SheetNumber=3|SymbolType=Normal|RawFileName=Peakhold.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Analog.SchDoc|Designator=Trigger|SchDesignator=Trigger|FileName=Trigger.SchDoc|SheetNumber=4|SymbolType=Normal|RawFileName=Trigger.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 

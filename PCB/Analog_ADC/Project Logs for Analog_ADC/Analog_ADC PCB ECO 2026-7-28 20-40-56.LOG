@@ -1,0 +1,482 @@
+Removed Pin From Net: NetName=AGND Pin=C7-1
+Removed Pin From Net: NetName=+3V3 Pin=C7-2
+Removed Pin From Net: NetName=+3V3 Pin=C8-1
+Removed Pin From Net: NetName=AGND Pin=C8-2
+Removed Pin From Net: NetName=AGND Pin=C13-1
+Removed Pin From Net: NetName=+5VA Pin=C13-2
+Removed Pin From Net: NetName=AGND Pin=C14-1
+Removed Pin From Net: NetName=-5VA Pin=C14-2
+Removed Pin From Net: NetName=+3V3 Pin=C17-2
+Removed Pin From Net: NetName=+2.5VA_REF Pin=C25-2
+Removed Pin From Net: NetName=ADC_CNV Pin=J2-16
+Removed Pin From Net: NetName=Signal Pin=R3-1
+Removed Pin From Net: NetName=NetR5_2 Pin=R10-1
+Removed Pin From Net: NetName=NetR9_1 Pin=R10-2
+Removed Pin From Net: NetName=AGND Pin=R14-1
+Removed Pin From Net: NetName=NetR5_2 Pin=R15-2
+Removed Pin From Net: NetName=+5VA Pin=R16-1
+Removed Pin From Net: NetName=AGND Pin=R17-1
+Removed Pin From Net: NetName=NetR5_2 Pin=R17-2
+Removed Pin From Net: NetName=ADC_SCK Pin=R21-1
+Removed Pin From Net: NetName=ADC_CNV Pin=R24-1
+Removed Pin From Net: NetName=AGND Pin=S2-4
+Removed Pin From Net: NetName=NetR9_1 Pin=U3-3
+Removed Pin From Net: NetName=Threshold Pin=U3-4
+Removed Pin From Net: NetName=+3V3 Pin=U3-5
+Removed Pin From Net: NetName=NetD1_3 Pin=U4-2
+Removed Pin From Net: NetName=-5VA Pin=U4-4
+Removed Pin From Net: NetName=AGND Pin=U4-6
+Removed Pin From Net: NetName=AGND Pin=U4-9
+Removed Pin From Net: NetName=+5VA Pin=U4-10
+Removed Member From Class: ClassName=Trigger Member=C7
+Removed Member From Class: ClassName=Trigger Member=C8
+Removed Member From Class: ClassName=Trigger Member=C17
+Removed Member From Class: ClassName=ADC Member=C25
+Removed Member From Class: ClassName=ADC Member=C27
+Removed Member From Class: ClassName=Peakhold Member=D3
+Removed Member From Class: ClassName=Trigger Member=R9
+Removed Member From Class: ClassName=Trigger Member=R10
+Removed Member From Class: ClassName=Peakhold Member=R12
+Removed Member From Class: ClassName=Peakhold Member=R16
+Removed Member From Class: ClassName=Peakhold Member=R17
+Removed Member From Class: ClassName=ADC Member=R19
+Removed Member From Class: ClassName=ADC Member=R22
+Removed Member From Class: ClassName=Trigger Member=Rset1
+Removed Member From Class: ClassName=ADC Member=S2
+Removed Member From Class: ClassName=Trigger Member=U3
+Change Component Footprint: Designator=U1 Old Footprint=ADA4841-1YRJZ-R7 New Footprint=ADA4807-1ARJZ-R2
+Change Component Footprint: Designator=C6 Old Footprint=C0402 New Footprint=C0603
+Change Component Footprint: Designator=C9 Old Footprint=C0402 New Footprint=GRM18x
+Change Component Footprint: Designator=C27 Old Footprint=C0603 New Footprint=C0402
+Change Component Footprint: Designator=C11 Old Footprint=C0603 New Footprint=CAPC1005X70N
+Change Component Footprint: Designator=C10 Old Footprint=C0603 New Footprint=GRM18x
+Change Component Footprint: Designator=C14 Old Footprint=C0603 New Footprint=GRM18x
+Change Component Footprint: Designator=C8 Old Footprint=CAPC1005X70N New Footprint=C0402
+Change Component Footprint: Designator=C12 Old Footprint=CAPC1005X70N New Footprint=C0603
+Change Component Footprint: Designator=C7 Old Footprint=CAPC1005X70N New Footprint=GRM18x
+Change Component Footprint: Designator=C15 Old Footprint=CAPC1005X70N New Footprint=GRM18x
+Change Component Footprint: Designator=U4 Old Footprint=DGS10 New Footprint=ADA4807-1ARJZ-R2
+Change Component Footprint: Designator=C13 Old Footprint=GRM18x New Footprint=C0603
+Change Component Footprint: Designator=R10 Old Footprint=R0603 New Footprint=RESC1608X55N
+Change Component Footprint: Designator=R13 Old Footprint=R0603 New Footprint=RESC1608X55N
+Change Component Footprint: Designator=R22 Old Footprint=R0603 New Footprint=RESC1608X55N
+Change Component Footprint: Designator=R1 Old Footprint=RESC1005X35N New Footprint=R0603
+Change Component Footprint: Designator=R5 Old Footprint=RESC1005X35N New Footprint=R0603
+Change Component Footprint: Designator=R11 Old Footprint=RESC1005X35N New Footprint=R0603
+Change Component Footprint: Designator=R21 Old Footprint=RESC1005X35N New Footprint=R0603
+Change Component Footprint: Designator=R23 Old Footprint=RESC1005X35N New Footprint=R0603
+Change Component Footprint: Designator=R24 Old Footprint=RESC1005X35N New Footprint=R0603
+Change Component Footprint: Designator=R17 Old Footprint=RESC1005X35N New Footprint=RESC1608X55N
+Change Component Footprint: Designator=R9 Old Footprint=RESC1608X55N New Footprint=R0603
+Change Component Footprint: Designator=R12 Old Footprint=RESC1608X55N New Footprint=R0603
+Change Component Footprint: Designator=U2 Old Footprint=TSOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR New Footprint=LTC6993-3
+Change Component Comment : Designator=R14 Old Comment=0次 New Comment=91次
+Change Component Comment : Designator=R13 Old Comment=1k次 New Comment=1M次
+Change Component Comment : Designator=R12 Old Comment=1M次 New Comment=1k次
+Change Component Comment : Designator=C7 Old Comment=1uF/50V New Comment=10uF/10V
+Change Component Comment : Designator=C16 Old Comment=2.2uF/6.3V New Comment=100nF/100V
+Change Component Comment : Designator=C13 Old Comment=2.2uF/6.3V New Comment=200pF
+Change Component Comment : Designator=C27 Old Comment=2.7nF New Comment=100nF
+Change Component Comment : Designator=C15 Old Comment=10nF/50V New Comment=1uF/25V
+Change Component Comment : Designator=C8 Old Comment=10nF/50V New Comment=100nF
+Change Component Comment : Designator=C12 Old Comment=10nF/50V New Comment=470pF
+Change Component Comment : Designator=C25 Old Comment=10uF/10V New Comment=4.7uF/25V
+Change Component Comment : Designator=R21 Old Comment=10次 New Comment=22次
+Change Component Comment : Designator=R24 Old Comment=10次 New Comment=22次
+Change Component Comment : Designator=R23 Old Comment=10次 New Comment=47k次
+Change Component Comment : Designator=R22 Old Comment=20次 New Comment=2k次
+Change Component Comment : Designator=C9 Old Comment=22pF New Comment=1uF/25V
+Change Component Comment : Designator=C6 Old Comment=22pF New Comment=10pF
+Change Component Comment : Designator=R17 Old Comment=50次 New Comment=2k次
+Change Component Comment : Designator=R11 Old Comment=50次 New Comment=22次
+Change Component Comment : Designator=R9 Old Comment=100k次 New Comment=0次
+Change Component Comment : Designator=R16 Old Comment=100次 New Comment=0次
+Change Component Comment : Designator=R10 Old Comment=100次 New Comment=1M次
+Change Component Comment : Designator=C10 Old Comment=150pF New Comment=4.7uF/25V
+Change Component Comment : Designator=R15 Old Comment=150次 New Comment=348次
+Change Component Comment : Designator=R7 Old Comment=330次 New Comment=470次
+Change Component Comment : Designator=R8 Old Comment=330次 New Comment=470次
+Change Component Comment : Designator=C11 Old Comment=470pF New Comment=10nF/50V
+Change Component Comment : Designator=C14 Old Comment=470pF New Comment=100nF/100V
+Change Component Comment : Designator=U1 Old Comment=ADA4841 New Comment=ADA4807-1ARJZ-R2
+Change Component Comment : Designator=U2 Old Comment=LTC6993 New Comment=LTC6993-3
+Change Component Comment : Designator=U4 Old Comment=OPA615_DGS_10 New Comment=ADA4807-1ARJZ-R2
+Change component parameters: Designator = "C7" ("C7"); Footprint = "CAPC1005X70N"; UniqueID = "\GUNVFAPC\HOEETJUM" ("\GUNVFAPC\HOEETJUM")
+Change component parameters (AddParameter): Name = "Arrow Part Number"; Value = "GRM188Z71A106KA73D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/grm188z71a106ka73d/murata-manufacturing?utm_currency=USD&region=europe"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Link"; Value = "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188Z71A106KA73-01A.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "0.9mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "GRM188Z71A106KA73D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Part Number"; Value = "81-GRM188Z71A106KA3D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM188Z71A106KA73D?qs=d0WKAl%252BL4KaRM1L%252BaIs%2FqQ%3D%3D"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C8" ("C8"); Footprint = "CAPC1005X70N"; UniqueID = "\GUNVFAPC\TYISOVHY" ("\GUNVFAPC\TYISOVHY")
+Change component parameters: Designator = "C9" ("C9"); Footprint = "C0402"; UniqueID = "\XDIGXFCN\LUWURLOV" ("\XDIGXFCN\LUWURLOV")
+Change component parameters (AddParameter): Name = "Arrow Part Number"; Value = "GRM188Z71A106KA73D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/grm188z71a106ka73d/murata-manufacturing?utm_currency=USD&region=europe"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Link"; Value = "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188Z71A106KA73-01A.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "0.9mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "GRM188Z71A106KA73D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Part Number"; Value = "81-GRM188Z71A106KA3D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM188Z71A106KA73D?qs=d0WKAl%252BL4KaRM1L%252BaIs%2FqQ%3D%3D"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C10" ("C10"); Footprint = "C0603"; UniqueID = "\XDIGXFCN\VQZDPTLK" ("\XDIGXFCN\VQZDPTLK")
+Change component parameters (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Link"; Value = "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155C71H683KE19-01A.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "0.7mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "GRM155C71H683KE19D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Part Number"; Value = "81-GRM155C71H683KE9D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM155C71H683KE19D?qs=IPQhFcwEUOjs6Vit%2FY1ulg%3D%3D"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C11" ("C11"); Footprint = "C0603"; UniqueID = "\XDIGXFCN\HIKBJCRM" ("\XDIGXFCN\HIKBJCRM")
+Change component parameters (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Link"; Value = "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155C71H683KE19-01A.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "0.7mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "GRM155C71H683KE19D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Part Number"; Value = "81-GRM155C71H683KE9D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM155C71H683KE19D?qs=IPQhFcwEUOjs6Vit%2FY1ulg%3D%3D"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C12" ("C12"); Footprint = "CAPC1005X70N"; UniqueID = "\XDIGXFCN\ZCTOKFSC" ("\XDIGXFCN\ZCTOKFSC")
+Change component parameters: Designator = "C13" ("C13"); Footprint = "GRM18x"; UniqueID = "\XDIGXFCN\LHIUMNGX" ("\XDIGXFCN\LHIUMNGX")
+Change component parameters: Designator = "C14" ("C14"); Footprint = "C0603"; UniqueID = "\XDIGXFCN\EDJZIXPJ" ("\XDIGXFCN\EDJZIXPJ")
+Change component parameters (AddParameter): Name = "Arrow Part Number"; Value = "GRM188Z71A106KA73D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/grm188z71a106ka73d/murata-manufacturing?utm_currency=USD&region=europe"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Link"; Value = "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188Z71A106KA73-01A.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "0.9mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "GRM188Z71A106KA73D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Part Number"; Value = "81-GRM188Z71A106KA3D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM188Z71A106KA73D?qs=d0WKAl%252BL4KaRM1L%252BaIs%2FqQ%3D%3D"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C15" ("C15"); Footprint = "CAPC1005X70N"; UniqueID = "\XDIGXFCN\ZYGBUXMI" ("\XDIGXFCN\ZYGBUXMI")
+Change component parameters (AddParameter): Name = "Arrow Part Number"; Value = "GRM188Z71A106KA73D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/grm188z71a106ka73d/murata-manufacturing?utm_currency=USD&region=europe"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Link"; Value = "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188Z71A106KA73-01A.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "0.9mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "GRM188Z71A106KA73D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Part Number"; Value = "81-GRM188Z71A106KA3D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM188Z71A106KA73D?qs=d0WKAl%252BL4KaRM1L%252BaIs%2FqQ%3D%3D"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C16" ("C16"); Footprint = "GRM18x"; UniqueID = "\XDIGXFCN\BZIQQROW" ("\XDIGXFCN\BZIQQROW")
+Change component parameters (AddParameter): Name = "Arrow Part Number"; Value = "GRM188Z71A106KA73D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/grm188z71a106ka73d/murata-manufacturing?utm_currency=USD&region=europe"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Link"; Value = "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188Z71A106KA73-01A.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "0.9mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "GRM188Z71A106KA73D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Part Number"; Value = "81-GRM188Z71A106KA3D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM188Z71A106KA73D?qs=d0WKAl%252BL4KaRM1L%252BaIs%2FqQ%3D%3D"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C25" ("C25"); Footprint = "GRM18x"; UniqueID = "\XDIGXFCN\ZJVOOJOW" ("\XDIGXFCN\ZJVOOJOW")
+Change component parameters (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Link"; Value = "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155C71H683KE19-01A.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "0.7mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "GRM155C71H683KE19D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Part Number"; Value = "81-GRM155C71H683KE9D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM155C71H683KE19D?qs=IPQhFcwEUOjs6Vit%2FY1ulg%3D%3D"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R1" ("R1"); Footprint = "RESC1005X35N"; UniqueID = "\DWLCTQOH" ("\DWLCTQOH")
+Change component parameters: Designator = "R5" ("R5"); Footprint = "RESC1005X35N"; UniqueID = "\PTQQDKKG\EQXHJAKQ" ("\PTQQDKKG\EQXHJAKQ")
+Change component parameters: Designator = "R9" ("R9"); Footprint = "RESC1608X55N"; UniqueID = "\GUNVFAPC\JHPRPLBY" ("\GUNVFAPC\JHPRPLBY")
+Change component parameters: Designator = "R10" ("R10"); Footprint = "R0603"; UniqueID = "\XDIGXFCN\EXKEOETD" ("\XDIGXFCN\EXKEOETD")
+Change component parameters (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Link"; Value = "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "0.55mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "YAGEO"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "RT0603BRD07523KL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Part Number"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "R11" ("R11"); Footprint = "RESC1005X35N"; UniqueID = "\XDIGXFCN\HBHWJTXL" ("\XDIGXFCN\HBHWJTXL")
+Change component parameters: Designator = "R12" ("R12"); Footprint = "RESC1608X55N"; UniqueID = "\PTKRIBUU\DBMIPCNR" ("\PTKRIBUU\DBMIPCNR")
+Change component parameters: Designator = "R13" ("R13"); Footprint = "R0603"; UniqueID = "\XDIGXFCN\BJVZALAL" ("\XDIGXFCN\BJVZALAL")
+Change component parameters (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Link"; Value = "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "0.55mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "YAGEO"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "RT0603BRD07523KL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Part Number"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "R17" ("R17"); Footprint = "RESC1005X35N"; UniqueID = "\PTKRIBUU\MQNNEIBD" ("\PTKRIBUU\MQNNEIBD")
+Change component parameters (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Link"; Value = "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "0.55mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "YAGEO"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "RT0603BRD07523KL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Part Number"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "R21" ("R21"); Footprint = "RESC1005X35N"; UniqueID = "\GUNVFAPC\ZFINJLUN" ("\GUNVFAPC\ZFINJLUN")
+Change component parameters: Designator = "R22" ("R22"); Footprint = "R0603"; UniqueID = "\PTKRIBUU\BKNVGZVF" ("\PTKRIBUU\BKNVGZVF")
+Change component parameters (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Link"; Value = "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "0.55mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "YAGEO"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "RT0603BRD07523KL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Part Number"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "R23" ("R23"); Footprint = "RESC1005X35N"; UniqueID = "\GUNVFAPC\JPILOCKK" ("\GUNVFAPC\JPILOCKK")
+Change component parameters: Designator = "R24" ("R24"); Footprint = "RESC1005X35N"; UniqueID = "\GUNVFAPC\QYYVTKUE" ("\GUNVFAPC\QYYVTKUE")
+Change component parameters: Designator = "U4" ("U4"); Footprint = "DGS10"; UniqueID = "\XDIGXFCN\OPIRDKPY" ("\XDIGXFCN\OPIRDKPY")
+Added Component: Designator=C28(CAPC1005X70N)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155C71H683KE19-01A.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.7mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "GRM155C71H683KE19D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "81-GRM155C71H683KE9D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM155C71H683KE19D?qs=IPQhFcwEUOjs6Vit%2FY1ulg%3D%3D"; VariantName = "[No Variations]"
+Added Component: Designator=C29(C0603)
+Added Component: Designator=C30(C0603)
+Added Component: Designator=C31(GRM18x)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "GRM188Z71A106KA73D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/grm188z71a106ka73d/murata-manufacturing?utm_currency=USD&region=europe"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188Z71A106KA73-01A.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.9mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "GRM188Z71A106KA73D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "81-GRM188Z71A106KA3D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM188Z71A106KA73D?qs=d0WKAl%252BL4KaRM1L%252BaIs%2FqQ%3D%3D"; VariantName = "[No Variations]"
+Added Component: Designator=C32(C0402)
+Added Component: Designator=C33(C0402)
+Added Component: Designator=C34(C0603)
+Added Component: Designator=C35(C0603)
+Added Component: Designator=C36(CAPC1005X70N)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "GRM155R61E105KA12D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/grm155r61e105ka12d/murata-manufacturing?utm_currency=USD&region=europe"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R61E105KA12-01A.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.7mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "GRM155R61E105KA12D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "81-GRM155R61E105KA2D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM155R61E105KA12D?qs=hiffU4J9V6bE4a81t2Mv5A%3D%3D"; VariantName = "[No Variations]"
+Added Component: Designator=C37(CAPC1005X70N)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155C71H683KE19-01A.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.7mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "GRM155C71H683KE19D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "81-GRM155C71H683KE9D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM155C71H683KE19D?qs=IPQhFcwEUOjs6Vit%2FY1ulg%3D%3D"; VariantName = "[No Variations]"
+Added Component: Designator=C38(C0402)
+Added Component: Designator=R25(RESC1005X35N)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://www.mouser.com/datasheet/2/447/PYu_RT_1_to_0_01_RoHS_L_12-3003070.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.35mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "YAGEO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "RT0402BRD07100RL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "603-RT0402BRD07100RL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/YAGEO/RT0402BRD07100RL?qs=BXCcY9r%252B08AMzQbwasaAdA%3D%3D"; VariantName = "[No Variations]"
+Added Component: Designator=R26(RESC1005X35N)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://www.mouser.com/datasheet/2/447/PYu_RT_1_to_0_01_RoHS_L_12-3003070.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.35mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "YAGEO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "RT0402BRD07100RL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "603-RT0402BRD07100RL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/YAGEO/RT0402BRD07100RL?qs=BXCcY9r%252B08AMzQbwasaAdA%3D%3D"; VariantName = "[No Variations]"
+Added Component: Designator=R27(RESC1608X55N)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.55mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "YAGEO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "RT0603BRD07523KL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=R28(R0603)
+Added Component: Designator=R29(R0603)
+Added Component: Designator=R30(R0603)
+Added Component: Designator=Rset(R0603)
+Added Component: Designator=U6(THS4631DR)
+Added Component: Designator=U7(SSOP8)
+Added Component: Designator=U8(SSOP8)
+Added Component: Designator=U9(LMV7239QDBVRQ1)
+Added Pin To Net: NetName=+2.5VA_REF Pin=C7-1
+Added Pin To Net: NetName=AGND Pin=C7-2
+Added Pin To Net: NetName=AGND Pin=C8-1
+Added Pin To Net: NetName=+3V3 Pin=C8-2
+Added Pin To Net: NetName=+5VA Pin=C9-1
+Added Pin To Net: NetName=AGND Pin=C9-2
+Added Pin To Net: NetName=+5VA Pin=C10-1
+Added Pin To Net: NetName=AGND Pin=C10-2
+Added Pin To Net: NetName=AGND Pin=C13-2
+Added Pin To Net: NetName=+5VA Pin=C14-1
+Added Pin To Net: NetName=AGND Pin=C14-2
+Added Pin To Net: NetName=+2.5VA_VDD Pin=C17-1
+Added Pin To Net: NetName=AGND Pin=C17-2
+Added Pin To Net: NetName=-5VA Pin=C25-2
+Added Pin To Net: NetName=+3V3 Pin=C27-2
+Added Pin To Net: NetName=AGND Pin=C28-1
+Added Pin To Net: NetName=-5VA Pin=C28-2
+Added Pin To Net: NetName=AGND Pin=C30-1
+Added Pin To Net: NetName=-5VA Pin=C30-2
+Added Pin To Net: NetName=+3V3 Pin=C31-1
+Added Pin To Net: NetName=AGND Pin=C31-2
+Added Pin To Net: NetName=AGND Pin=C32-1
+Added Pin To Net: NetName=AGND Pin=C33-1
+Added Pin To Net: NetName=+3V3 Pin=C33-2
+Added Pin To Net: NetName=AGND Pin=C36-1
+Added Pin To Net: NetName=+3V3 Pin=C36-2
+Added Pin To Net: NetName=+3V3 Pin=C37-1
+Added Pin To Net: NetName=AGND Pin=C37-2
+Added Pin To Net: NetName=AGND Pin=C38-1
+Added Pin To Net: NetName=+3V3 Pin=C38-2
+Added Pin To Net: NetName=+3V3 Pin=R9-2
+Added Pin To Net: NetName=AGND Pin=R10-1
+Added Pin To Net: NetName=Restart Pin=R10-2
+Added Pin To Net: NetName=NetD1_3 Pin=R11-1
+Added Pin To Net: NetName=Threshold Pin=R12-1
+Added Pin To Net: NetName=AGND Pin=R13-1
+Added Pin To Net: NetName=Signal Pin=R16-1
+Added Pin To Net: NetName=+3V3 Pin=R17-2
+Added Pin To Net: NetName=ADC_SCK Pin=R21-2
+Added Pin To Net: NetName=+3V3 Pin=R22-2
+Added Pin To Net: NetName=+3V3 Pin=R23-2
+Added Pin To Net: NetName=ADC_SDO Pin=R24-2
+Added Pin To Net: NetName=+3V3 Pin=R25-2
+Added Pin To Net: NetName=+3V3 Pin=R26-1
+Added Pin To Net: NetName=NetR5_2 Pin=R28-1
+Added Pin To Net: NetName=ADC_CNV Pin=R30-1
+Added Pin To Net: NetName=AGND Pin=Rset-1
+Added Pin To Net: NetName=NetD1_3 Pin=S1-2
+Added Pin To Net: NetName=AGND Pin=S1-3
+Added Pin To Net: NetName=AGND Pin=S1-4
+Added Pin To Net: NetName=ADC_CNV Pin=U2-1
+Added Pin To Net: NetName=AGND Pin=U2-2
+Added Pin To Net: NetName=+3V3 Pin=U2-4
+Added Pin To Net: NetName=-5VA Pin=U4-2
+Added Pin To Net: NetName=NetR5_2 Pin=U4-3
+Added Pin To Net: NetName=+5VA Pin=U4-6
+Added Pin To Net: NetName=NetR9_1 Pin=U5-9
+Added Pin To Net: NetName=+3V3 Pin=U5-10
+Added Pin To Net: NetName=NetD1_3 Pin=U6-3
+Added Pin To Net: NetName=-5VA Pin=U6-4
+Added Pin To Net: NetName=+5VA Pin=U6-7
+Added Pin To Net: NetName=+3V3 Pin=U7-2
+Added Pin To Net: NetName=AGND Pin=U7-4
+Added Pin To Net: NetName=ADC_CNV Pin=U7-5
+Added Pin To Net: NetName=+3V3 Pin=U7-8
+Added Pin To Net: NetName=AGND Pin=U8-1
+Added Pin To Net: NetName=AGND Pin=U8-4
+Added Pin To Net: NetName=+3V3 Pin=U8-8
+Added Pin To Net: NetName=AGND Pin=U9-2
+Added Pin To Net: NetName=+3V3 Pin=U9-5
+Added Pin To Net: NetName=NetC13_1 Pin=C13-1
+Added Pin To Net: NetName=NetC13_1 Pin=R11-2
+Added Net: Name=NetC13_1
+Added Pin To Net: NetName=NetC29_1 Pin=C29-1
+Added Pin To Net: NetName=NetC29_1 Pin=C35-1
+Added Pin To Net: NetName=NetC29_1 Pin=U8-6
+Added Net: Name=NetC29_1
+Added Pin To Net: NetName=NetC29_2 Pin=C29-2
+Added Pin To Net: NetName=NetC29_2 Pin=C35-2
+Added Pin To Net: NetName=NetC29_2 Pin=R22-1
+Added Pin To Net: NetName=NetC29_2 Pin=U8-7
+Added Net: Name=NetC29_2
+Added Pin To Net: NetName=NetC32_2 Pin=C32-2
+Added Pin To Net: NetName=NetC32_2 Pin=R12-2
+Added Pin To Net: NetName=NetC32_2 Pin=U9-4
+Added Net: Name=NetC32_2
+Added Pin To Net: NetName=NetC34_1 Pin=C34-1
+Added Pin To Net: NetName=NetC34_1 Pin=U7-6
+Added Net: Name=NetC34_1
+Added Pin To Net: NetName=NetC34_2 Pin=C34-2
+Added Pin To Net: NetName=NetC34_2 Pin=R17-1
+Added Pin To Net: NetName=NetC34_2 Pin=U7-7
+Added Net: Name=NetC34_2
+Added Pin To Net: NetName=NetD1_1 Pin=D1-1
+Added Pin To Net: NetName=NetD1_1 Pin=D2-3
+Added Pin To Net: NetName=NetD1_1 Pin=U4-1
+Added Net: Name=NetD1_1
+Added Pin To Net: NetName=NetD2_1 Pin=D2-1
+Added Pin To Net: NetName=NetD2_1 Pin=R14-2
+Added Pin To Net: NetName=NetD2_1 Pin=R15-1
+Added Net: Name=NetD2_1
+Added Pin To Net: NetName=NetR3_1 Pin=R3-1
+Added Pin To Net: NetName=NetR3_1 Pin=R16-2
+Added Net: Name=NetR3_1
+Added Pin To Net: NetName=NetR13_2 Pin=R13-2
+Added Pin To Net: NetName=NetR13_2 Pin=R15-2
+Added Pin To Net: NetName=NetR13_2 Pin=R20-2
+Added Pin To Net: NetName=NetR13_2 Pin=U6-2
+Added Pin To Net: NetName=NetR13_2 Pin=U6-6
+Added Net: Name=NetR13_2
+Added Pin To Net: NetName=NetR14_1 Pin=R14-1
+Added Pin To Net: NetName=NetR14_1 Pin=U4-4
+Added Net: Name=NetR14_1
+Added Pin To Net: NetName=NetR21_1 Pin=R21-1
+Added Pin To Net: NetName=NetR21_1 Pin=U5-8
+Added Net: Name=NetR21_1
+Added Pin To Net: NetName=NetR24_1 Pin=R24-1
+Added Pin To Net: NetName=NetR24_1 Pin=U5-7
+Added Net: Name=NetR24_1
+Added Pin To Net: NetName=NetR25_1 Pin=R25-1
+Added Pin To Net: NetName=NetR25_1 Pin=U7-3
+Added Net: Name=NetR25_1
+Added Pin To Net: NetName=NetR26_2 Pin=R26-2
+Added Pin To Net: NetName=NetR26_2 Pin=U8-3
+Added Net: Name=NetR26_2
+Added Pin To Net: NetName=NetR27_1 Pin=R27-1
+Added Pin To Net: NetName=NetR27_1 Pin=R28-2
+Added Pin To Net: NetName=NetR27_1 Pin=U9-3
+Added Net: Name=NetR27_1
+Added Pin To Net: NetName=NetR29_1 Pin=R29-1
+Added Pin To Net: NetName=NetR29_1 Pin=U2-6
+Added Net: Name=NetR29_1
+Added Pin To Net: NetName=NetR29_2 Pin=R29-2
+Added Pin To Net: NetName=NetR29_2 Pin=U4-5
+Added Net: Name=NetR29_2
+Added Pin To Net: NetName=NetR30_2 Pin=R30-2
+Added Pin To Net: NetName=NetR30_2 Pin=U5-6
+Added Net: Name=NetR30_2
+Added Pin To Net: NetName=NetRset_2 Pin=Rset-2
+Added Pin To Net: NetName=NetRset_2 Pin=U2-3
+Added Net: Name=NetRset_2
+Added Pin To Net: NetName=Q_DELAY Pin=U7-1
+Added Pin To Net: NetName=Q_DELAY Pin=U8-5
+Added Net: Name=Q_DELAY
+Added Pin To Net: NetName=TRIG_RAW Pin=R27-2
+Added Pin To Net: NetName=TRIG_RAW Pin=U8-2
+Added Pin To Net: NetName=TRIG_RAW Pin=U9-1
+Added Net: Name=TRIG_RAW
+Added Member To Class: ClassName=ADC Member=Component C7 10uF/10V
+Added Member To Class: ClassName=ADC Member=Component C8 100nF
+Added Member To Class: ClassName=ADC Member=Component C17 100nF
+Added Member To Class: ClassName=Peakhold Member=Component C25 4.7uF/25V
+Added Member To Class: ClassName=Trigger Member=Component C27 100nF
+Added Member To Class: ClassName=Peakhold Member=Component C28 10nF/50V
+Added Member To Class: ClassName=Trigger Member=Component C29 10pFㄛDNP
+Added Member To Class: ClassName=Peakhold Member=Component C30 470pF
+Added Member To Class: ClassName=Peakhold Member=Component C31 100nF/100V
+Added Member To Class: ClassName=Trigger Member=Component C32 100nF
+Added Member To Class: ClassName=Trigger Member=Component C33 100nF
+Added Member To Class: ClassName=Trigger Member=Component C34 39pF NP0
+Added Member To Class: ClassName=Trigger Member=Component C35 56pF
+Added Member To Class: ClassName=Trigger Member=Component C36 1uF/50V
+Added Member To Class: ClassName=Trigger Member=Component C37 10nF/50V
+Added Member To Class: ClassName=Trigger Member=Component C38 100nF
+Added Member To Class: ClassName=ADC Member=Component R9 0次
+Added Member To Class: ClassName=Peakhold Member=Component R10 1M次
+Added Member To Class: ClassName=Trigger Member=Component R12 1k次
+Added Member To Class: ClassName=BAMP Member=Component R16 0次
+Added Member To Class: ClassName=Trigger Member=Component R17 2k次
+Added Member To Class: ClassName=Trigger Member=Component R22 2k次
+Added Member To Class: ClassName=Trigger Member=Component R25 10k次
+Added Member To Class: ClassName=Trigger Member=Component R26 10k次
+Added Member To Class: ClassName=Trigger Member=Component R27 100k次
+Added Member To Class: ClassName=Trigger Member=Component R28 100次
+Added Member To Class: ClassName=Peakhold Member=Component R29 50次
+Added Member To Class: ClassName=ADC Member=Component R30 22次
+Added Member To Class: ClassName=Trigger Member=Component Rset 127k次
+Added Member To Class: ClassName=Peakhold Member=Component U6 THS4631DR
+Added Member To Class: ClassName=Trigger Member=Component U7 SN74LVC1G123DCTR
+Added Member To Class: ClassName=Trigger Member=Component U8 SN74LVC1G123DCTR
+Added Member To Class: ClassName=Trigger Member=Component U9 LMV7239QDBVRQ1

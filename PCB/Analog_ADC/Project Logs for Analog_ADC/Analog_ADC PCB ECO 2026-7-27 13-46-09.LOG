@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=+5VA Pin=C19-1
+Removed Pin From Net: NetName=+2.5VA_VDD Pin=C21-1
+Change Component Footprint: Designator=C19 Old Footprint=TAJD_AVX New Footprint=CASE-D
+Change Component Footprint: Designator=C21 Old Footprint=TAJD_AVX New Footprint=CASE-D
+Change Component Comment : Designator=C19 Old Comment=10uF 25V tan New Comment=10uF
+Change Component Comment : Designator=C21 Old Comment=10uF 25V tan New Comment=10uF
+Change component parameters: Designator = "C19" ("C19"); Footprint = "TAJD_AVX"; UniqueID = "\BFIETVBU" ("\BFIETVBU")
+Change component parameters: Designator = "C21" ("C21"); Footprint = "TAJD_AVX"; UniqueID = "\XJCQNNDE" ("\XJCQNNDE")
+Added Pin To Net: NetName=+2.5VA_VDD Pin=C19-1
+Added Pin To Net: NetName=+5VA Pin=C21-1
