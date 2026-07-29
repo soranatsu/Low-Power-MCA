@@ -1,0 +1,57 @@
+***** HSPICE -- C-2009.09 32-BIT (Aug 24 2009) winnt ******
+ Input File: C:\Users\sora\Downloads\scej262\sn74lvc1g123_3V3_2k_56p_3us_TI_corr
+ lic: No 'set LM_LICENSE_FILE' in current environment'
+ lic:
+ lic: FLEXlm: v8.5b
+ lic: USER:   sora                 HOSTNAME: LAPTOP-P9BSR5LO
+ lic: HOSTID: "d853bc322da6 105fad8c5ef0 105fad8c5eec 105fad8c5eed 125fad8c5eec"
+ lic: Using FLEXlm license file:
+ lic: 27000@LAPTOP-P9BSR5LO
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 31-dec-2028/2008.120
+ lic: FLOATING license(s) on SERVER LAPTOP-P9BSR5LO
+ lic:
+ init: begin read circuit files,  cpu clock=  6.90E-02
+       option search   = C:\synopsys\Hspice_C-2009.09\PARTS\behave\
+       option search   = C:\synopsys\Hspice_C-2009.09\PARTS\AD\
+       option search   = C:\synopsys\Hspice_C-2009.09\PARTS\XILINX\
+       option search   = C:\synopsys\Hspice_C-2009.09\PARTS\TLINE\
+       option search   = C:\synopsys\Hspice_C-2009.09\PARTS\TI\
+       option search   = C:\synopsys\Hspice_C-2009.09\PARTS\SIGNET\
+       option search   = C:\synopsys\Hspice_C-2009.09\PARTS\PCI\
+       option search   = C:\synopsys\Hspice_C-2009.09\PARTS\LIN_TECH\
+       option search   = C:\synopsys\Hspice_C-2009.09\PARTS\FET\
+       option search   = C:\synopsys\Hspice_C-2009.09\PARTS\DIO\
+       option search   = C:\synopsys\Hspice_C-2009.09\PARTS\COMLINE\
+       option search   = C:\synopsys\Hspice_C-2009.09\PARTS\BURR_BRN\
+       option search   = C:\synopsys\Hspice_C-2009.09\PARTS\BJT\
+       option search   = C:\synopsys\Hspice_C-2009.09\PARTS\behave\
+       option search   = C:\synopsys\Hspice_C-2009.09\PARTS\AD\
+       option post
+       option runlvl   =     6.00
+       option post     =     2.00
+       option nomod
+ init: end read circuit files,  cpu clock=  1.44E-01 memory=    339 kb
+ init: begin check errors,  cpu clock=  1.44E-01
+ init: end check errors,  cpu clock=  1.58E-01 memory=   2200 kb
+ init: begin setup matrix, pivot=     0 cpu clock=  1.58E-01
+       establish matrix -- done,  cpu clock=  1.61E-01 memory=   2319 kb
+       re-order matrix -- done,  cpu clock=  1.63E-01 memory=   2323 kb
+ init: end setup matrix,  cpu clock=  1.69E-01 memory=   2540 kb
+ dcop: begin dcop,  cpu clock=  1.71E-01
+ dcop: end dcop,  cpu clock=  1.82E-01 memory=   2540 kb  tot_iter=      47
+ output: C:\Users\sora\Downloads\scej262\sn74lvc1g123_3V3_2k_56p_3us_TI_correcte
+ sweep: tran tran0    begin, stop_t=  3.00E-06 #sweeps=**** cpu clock=  1.90E-01
+ tran: time= 3.0145E-07 tot_iter=    2971 conv_iter=    1065 cpu clock= 6.02E-01
+ tran: time= 6.2077E-07 tot_iter=    3067 conv_iter=    1108 cpu clock= 6.20E-01
+ tran: time= 9.3381E-07 tot_iter=    3087 conv_iter=    1118 cpu clock= 6.25E-01
+ tran: time= 1.2001E-06 tot_iter=    5223 conv_iter=    1889 cpu clock= 9.33E-01
+ tran: time= 1.5067E-06 tot_iter=    6135 conv_iter=    2216 cpu clock= 1.06E+00
+ tran: time= 1.8176E-06 tot_iter=    6167 conv_iter=    2232 cpu clock= 1.08E+00
+ tran: time= 2.1000E-06 tot_iter=    6185 conv_iter=    2241 cpu clock= 1.08E+00
+ tran: time= 2.4023E-06 tot_iter=    9182 conv_iter=    3320 cpu clock= 1.51E+00
+ tran: time= 2.7201E-06 tot_iter=    9230 conv_iter=    3344 cpu clock= 1.52E+00
+ tran: time= 3.0000E-06 tot_iter=    9246 conv_iter=    3352 cpu clock= 1.53E+00
+ sweep: tran tran0    end,  cpu clock=  1.54E+00 memory=   2541 kb
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)

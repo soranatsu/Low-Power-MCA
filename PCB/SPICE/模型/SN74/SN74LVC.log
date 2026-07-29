@@ -1,0 +1,81 @@
+LTspice 26.0.2 for Windows
+Circuit: E:\天格\比赛\SPICE\模型\SN74\SN74LVC.net
+Start Time: Wed Jul 29 03:03:07 2026
+    --- Expanded Netlist ---
+V1 N007 0 DC=3.3
+R2 N006 N005 R=10000
+R1 N003 N007 R=5000
+C1 N001 N003 CAPACITANCE=5.6e-11
+V2 N005 0 DC=3.3
+V3 N004 0 PULSE=(0,3.3,5.0000000000000004e-08,2e-10,2e-10,3.0000000000000004e-07,5.000000000000001e-07)
+
+u1:DB_CL 0 N004 u1:LVC123_DCLAMP 
+u1:SB_RST u1:B_L 0 u1:B_RST 0 u1:LVC123_SWLOG 
+u1:RCEXT_REF N001 0 R=0.05
+u1:BTCMP u1:TCMP 0 V=if(v(u1:state)>(0.5*v(n007)),if(v(u1:rh)<(0.5*v(n007)),if((v(n003)-v(n001))>(0.6321205588*v(n007)),1,0),0),0)
+u1:BC_D u1:C_D 0 V=delay(v(u1:c_l),2e-09)
+u1:CB_IN N004 0 CAPACITANCE=2.77e-12
+u1:CC_IN N006 0 CAPACITANCE=2.77e-12
+u1:BA_SET u1:A_SET 0 V=0
+u1:BA_RST u1:A_RST 0 V=1
+u1:SA_SET N007 u1:A_L u1:A_SET 0 u1:LVC123_SWLOG 
+u1:RA_L u1:A_L 0 R=1000000000000
+u1:CINT_TIM N003 N001 CAPACITANCE=4.7e-11
+u1:CRH u1:RH 0 CAPACITANCE=1e-12 IC=0
+u1:BRH_CLR u1:RH_CLR 0 V=u(0.5-v(u1:trig))*u(0.01*v(n007)-(v(n003)-v(n001)))
+u1:BTIM_CTL u1:TIM_CTL 0 V=if(v(u1:c_l)<(0.5*v(n007)),1,if(v(u1:rh)>(0.5*v(n007)),1,0))
+u1:STIM N003 N001 u1:TIM_CTL 0 u1:LVC123_SWTIM 
+u1:BPU N002 N007 I=if(v(u1:qlog)>(0.5*v(n007)),(v(n002)-v(n007))/37.5,0)
+u1:CA_L u1:A_L 0 CAPACITANCE=1e-12 IC=0
+u1:RB_L u1:B_L 0 R=1000000000000
+u1:SC_RST u1:C_L 0 u1:C_RST 0 u1:LVC123_SWLOG 
+u1:BTR_A u1:TR_A 0 V=u(time-5e-09)*u(v(n007)-1)*u(0.5*v(n007)-v(u1:a_l))*u(v(u1:a_d)-0.5*v(n007))*u(v(u1:b_l)-0.5*v(n007))*u(v(u1:c_l)-0.5*v(n007))
+u1:SRH_CLR u1:RH 0 u1:RH_CLR 0 u1:LVC123_SWLOG 
+u1:SSTATE_SET N007 u1:STATE u1:TRIG 0 u1:LVC123_SWLOG 
+u1:BPD N002 0 I=if(v(u1:qlog)<(0.5*v(n007)),v(n002)/17.2,0)
+u1:RB_LEAK N004 0 R=1000000000000
+u1:BC_SET u1:C_SET 0 V=if(v(n006)>3.85,1,0)
+u1:SC_SET N007 u1:C_L u1:C_SET 0 u1:LVC123_SWLOG 
+u1:BQLOG u1:QLOG 0 V=delay(v(u1:state),1.5000000000000002e-09)
+u1:CQ_OUT N002 0 CAPACITANCE=8.58e-12
+u1:BB_SET u1:B_SET 0 V=if(v(n004)>3.85,1,0)
+u1:BB_RST u1:B_RST 0 V=if(v(n004)<1.35,1,0)
+u1:CB_L u1:B_L 0 CAPACITANCE=1e-12 IC=0
+u1:BC_RST u1:C_RST 0 V=if(v(n006)<1.35,1,0)
+u1:BTR_C u1:TR_C 0 V=u(time-5e-09)*u(v(n007)-1)*u(v(u1:c_l)-0.5*v(n007))*u(0.5*v(n007)-v(u1:c_d))*u(0.5*v(n007)-v(u1:a_l))*u(v(u1:b_l)-0.5*v(n007))
+u1:RRH u1:RH 0 R=1000000000000
+u1:SRH_SET N007 u1:RH u1:TRIG 0 u1:LVC123_SWLOG 
+u1:SB_SET N007 u1:B_L u1:B_SET 0 u1:LVC123_SWLOG 
+u1:BA_D u1:A_D 0 V=delay(v(u1:a_l),2e-09)
+u1:RSTATE u1:STATE 0 R=1000000000000
+u1:DC_CL 0 N006 u1:LVC123_DCLAMP 
+u1:SA_RST u1:A_L 0 u1:A_RST 0 u1:LVC123_SWLOG 
+u1:RC_L u1:C_L 0 R=1000000000000
+u1:BB_D u1:B_D 0 V=delay(v(u1:b_l),2e-09)
+u1:BTR_B u1:TR_B 0 V=u(time-5e-09)*u(v(n007)-1)*u(v(u1:b_l)-0.5*v(n007))*u(0.5*v(n007)-v(u1:b_d))*u(0.5*v(n007)-v(u1:a_l))*u(v(u1:c_l)-0.5*v(n007))
+u1:BSTATE_RST u1:STATE_RST 0 V=if(v(u1:c_l)<(0.5*v(n007)),1,v(u1:tcmp))
+u1:DQ_CL 0 N002 u1:LVC123_DCLAMP 
+u1:RC_LEAK N006 0 R=1000000000000
+u1:CC_L u1:C_L 0 CAPACITANCE=1e-12 IC=0
+u1:BTRIG u1:TRIG 0 V=if((v(u1:tr_a)+v(u1:tr_b)+v(u1:tr_c))>0.5,1,0)
+u1:RRC_LEAK N003 0 R=1000000000000
+u1:CSTATE u1:STATE 0 CAPACITANCE=1e-12 IC=0
+u1:SSTATE_RST u1:STATE 0 u1:STATE_RST 0 u1:LVC123_SWLOG 
+.model u1:LVC123_SWLOG SW(Ron=0.05 Roff=1000000000000 Vt=0.5 Vh=0.1)
+.model u1:LVC123_SWTIM SW(Ron=0.002 Roff=1000000000000 Vt=0.5 Vh=0.1)
+.model u1:LVC123_DCLAMP D(Is=1e-14 N=1 Rs=0.5 Cjo=3.4999999999999997e-13 Bv=7 Ibv=0.001)
+
+.end
+
+solver = Normal
+Maximum thread count: 32
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.067 seconds.
+
+Files loaded:
+E:\天格\比赛\SPICE\模型\SN74\SN74LVC.net
+C:\Users\sora\AppData\Local\LTspice\lib\sub\SN74LVC1G123_LTspice.lib
+

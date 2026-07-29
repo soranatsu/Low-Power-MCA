@@ -1,0 +1,36 @@
+* "simulator" "HSPICE" 
+* "version" "C-2009.09 32-BIT"
+* "format" "HSP"
+* "rundate" "13:49:31 07/29/2026 "
+* "netlist" "C:\Users\sora\Downloads\scej262\sn74lvc1g123_3V3_2k_56p_3us_TI_corrected.sp "
+* "runtitle" "****************************************************"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ b =   0.            
++ cx =   0.            
++ na =   0.            
++ nclr =   3.3000        
++ q = 324.0623p       
++ rx_cx =   3.3000        
++ vcc =   3.3000        
++ x__sn74lvc1g123.pi1 =  69.8511f       
++ x__sn74lvc1g123.pi2 =  68.2837f       
++ x__sn74lvc1g123.pi3 =   3.3000        
++ x__sn74lvc1g123.pi4 =  22.4733p       
++ x__sn74lvc1g123.pi5 = 324.0623p       
++ x__sn74lvc1g123.pi6 =   3.1854p       
++ x__sn74lvc1g123.pi7 =   3.3000        
++ x__sn74lvc1g123.pi8 =   3.3000        
++ x__sn74lvc1g123.pm1 =   0.            
++ x__sn74lvc1g123.pm2 =   0.            
++ x__sn74lvc1g123.pm3 =   3.3000        
++ x__sn74lvc1g123.pm4 =   0.            
++ x__sn74lvc1g123.pm5 = 324.0623p       
++ x__sn74lvc1g123.pm6 =   0.            
++ x__sn74lvc1g123.pm7 =   3.3000        
++ x__sn74lvc1g123.pm8 =   3.3000        
+***   END: Saved Operating Point ***                     
