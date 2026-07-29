@@ -1,0 +1,26 @@
+# STM32CubeIDE build outputs
+**/Debug/
+**/Release/
+*.o
+*.d
+*.su
+*.cyclo
+*.elf
+*.bin
+*.hex
+*.map
+*.list
+
+# IDE and OS-local files
+.metadata/
+.settings/language.settings.xml
+.DS_Store
+Thumbs.db
+
+# Altium-generated local/history files
+**/History/
+**/Project Logs for */
+**/__Previews/
+*.PrjPcbStructure
+*.PcbDoc.htm
+*.SchDocPreview
