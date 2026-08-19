@@ -19,9 +19,11 @@
 
 > [!NOTE]
 > 这是一个完整的核电子学脉冲幅度分析链路，而不是单纯的 ADC 读数程序：模拟前端完成缓冲、峰值捕获和保持，独立硬件触发链产生确定性采样时序，STM32G474 完成 AD7980 Busy 事件读出与数据管理，PC 上位机实时形成多道能谱并计算 ROI、峰位、FWHM、分辨率、计数率和链路健康指标。
+
 <p align="center">
   <img src="docs/images/project_overview.png" alt="Low-Power MCA overview" width="60%">
 </p>
+
 ---
 
 ## 1. Project Overview
