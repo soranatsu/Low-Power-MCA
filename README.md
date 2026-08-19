@@ -1,3 +1,5 @@
+
+
 <h1 align="center">Low-Power MCA — AD7980-based Multi-Channel Pulse Height Analyzer</h1>
 
 <p align="center">
@@ -10,6 +12,7 @@
   <img src="https://img.shields.io/badge/ADC-AD7980%2016--bit-0057B8" alt="AD7980 16-bit">
   <img src="https://img.shields.io/badge/Spectrum-4096%E2%80%9365536%20channels-0A7B83" alt="4096-65536 channels">
   <img src="https://img.shields.io/badge/Rate-%E2%89%88100%20kcps-2E8B57" alt="100 kcps">
+  <img src="https://img.shields.io/badge/Power-%E2%89%880.35%20W-2E8B57" alt="Approximately 0.35 W">
   <img src="https://img.shields.io/badge/FWHM-%3C1%25-2E8B57" alt="FWHM under 1 percent">
   <img src="https://img.shields.io/badge/Interface-USB%20CDC-6A5ACD" alt="USB CDC">
 </p>
@@ -17,10 +20,8 @@
 > [!NOTE]
 > 这是一个完整的核电子学脉冲幅度分析链路，而不是单纯的 ADC 读数程序：模拟前端完成缓冲、峰值捕获和保持，独立硬件触发链产生确定性采样时序，STM32G474 完成 AD7980 Busy 事件读出与数据管理，PC 上位机实时形成多道能谱并计算 ROI、峰位、FWHM、分辨率、计数率和链路健康指标。
 <p align="center">
-  <img src="docs/images/project_overview.png" alt="Low-Power MCA overview" width="60%">
+  <img src="docs/images/project_overview.png" alt="Low-Power MCA overview" width="92%">
 </p>
-
-
 ---
 
 ## 1. Project Overview
@@ -42,6 +43,7 @@
 | 采样触发 | 外部硬件 CNV，Busy 完成指示 |
 | 高速链路 | 4096 道 MCU 本地直方图；高道数 B16 原码批传 |
 | PC 通信 | USB Full-Speed CDC |
+| 整机输入功耗 | **约 0.35 W @ 5.60 V**；空载至 100 kHz 约 61–63 mA |
 | 可靠性 | sequence + CRC16-CCITT + USB recovery |
 | 谱学分析 | ROI、Peak、Centroid、FWHM、Resolution、CPS |
 | 数据导出 | CSV / TXT / PNG / 测试报告 |
@@ -331,6 +333,42 @@ PPT 中记录的一次代表性满 16 位实测工况：
   <img src="docs/images/resolution_vs_input.png" alt="Resolution versus input" width="78%">
 </p>
 
+
+### 8.2 System power consumption
+
+系统总输入电压为 **5.60 V**。在空载以及 1 kHz、50 kHz、100 kHz 三种事件率下，分别对 70、259、453、515、900 mV 典型输入幅度进行测试。
+
+| 脉冲频率 | 输入幅度 / mV | 输入电流 / A | 输入功耗 / W |
+|---|---:|---:|---:|
+| 空载 | — | 0.062 | 0.347 |
+| 1 kHz | 70 | 0.063 | 0.353 |
+| 1 kHz | 259 | 0.063 | 0.353 |
+| 1 kHz | 453 | 0.063 | 0.353 |
+| 1 kHz | 515 | 0.062 | 0.347 |
+| 1 kHz | 900 | 0.063 | 0.353 |
+| 50 kHz | 70 | 0.061 | 0.342 |
+| 50 kHz | 259 | 0.062 | 0.347 |
+| 50 kHz | 453 | 0.062 | 0.347 |
+| 50 kHz | 515 | 0.062 | 0.347 |
+| 50 kHz | 900 | 0.063 | 0.353 |
+| 100 kHz | 70 | 0.061 | 0.342 |
+| 100 kHz | 259 | 0.062 | 0.347 |
+| 100 kHz | 453 | 0.062 | 0.347 |
+| 100 kHz | 515 | 0.062 | 0.347 |
+| 100 kHz | 900 | 0.063 | 0.353 |
+
+<p align="center">
+  <img src="docs/images/power_consumption.png" alt="System power consumption" width="78%">
+</p>
+
+测试记录的输入电流范围为 **61–63 mA**，对应整机输入功耗约 **0.342–0.353 W**；全部 16 个记录点的平均功耗约为 **0.349 W**。其中空载约为 **347.2 mW**，100 kHz 五个幅度点的平均功耗同样约为 **347.2 mW**。
+
+在本次测试覆盖范围内，未观察到功耗随输入幅度或事件率显著增加的趋势。因此系统级功耗可概括为：
+
+> **≈ 0.35 W total input power @ 5.60 V, essentially unchanged from idle to 100 kcps and across 70–900 mV input amplitude.**
+
+完整测试记录见 [`docs/POWER_CONSUMPTION_TEST.md`](docs/POWER_CONSUMPTION_TEST.md)。
+
 ---
 
 ## 9. Build & Flash
@@ -401,6 +439,9 @@ NuclearMcaMonitor_FinalAdaptive_v2.6.2.exe
 Low-Power-MCA/
 ├── README.md
 ├── docs/
+│   ├── POWER_CONSUMPTION_TEST.md
+│   ├── Low-Power-MCA_系统功耗测试报告.docx
+│   ├── power_consumption_test_data.csv
 │   └── images/
 │       ├── project_overview.png
 │       ├── system_architecture.png
@@ -410,7 +451,8 @@ Low-Power-MCA/
 │       ├── pc_monitor.png
 │       ├── measured_performance.png
 │       ├── linearity_fit.png
-│       └── resolution_vs_input.png
+│       ├── resolution_vs_input.png
+│       └── power_consumption.png
 └── firmware/
     └── STM32G474_AD7980_FinalAdaptive/
         ├── Core/
@@ -471,7 +513,8 @@ processing_efficiency = processed_samples / busy_events × 100%
 - [x] 65536 道近 100 kcps 连续采集代表性验证
 - [x] 17 点 100 kHz 线性度测试
 - [ ] 真实探测器 / 放射源的道址—能量标定
-- [ ] 系统级功耗、温漂和长期稳定性定量报告
+- [x] 系统级功耗测试：5.60 V 输入下约 **0.35 W**，空载至 100 kHz 基本稳定
+- [ ] 温漂和长期稳定性定量报告
 
 <p align="center">
   <img src="docs/images/conclusion.png" alt="Project conclusion" width="92%">
