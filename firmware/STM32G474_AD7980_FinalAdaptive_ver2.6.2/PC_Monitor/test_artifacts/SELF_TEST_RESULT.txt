@@ -1,0 +1,18 @@
+status parser PASS
+RAW16 batch parser PASS
+sample parser PASS
+histogram parser PASS
+robust spectrum metrics and 0-2.5V full16 ADC mapping PASS
+spectrum cursor exact channel/raw-code/ADC-voltage mapping PASS
+ROI/background-corrected FWHM PASS
+impedance conversion PASS
+configurable linear amplitude gain PASS
+linearity fit PASS
+same-window MCU uptime rate/pass calculation and reset rejection PASS
+editable inverse linear calibration PASS
+repeated log/linear axis toggle PASS
+empty/full/zoom spectrum view and peak-snap cursor FWHM PASS
+4096/8192/16384/65536 channel-switch atomic view reset PASS
+pass-rate >=99% green and efficiency >=99.9% green color thresholds PASS
+USB CDC port deduplication and numeric ordering PASS
+metric value wheel scrolling with wrap clamp PASS

@@ -1,0 +1,103 @@
+Removed Pin From Net: NetName=GND Pin=C2-1
+Removed Pin From Net: NetName=+5V Pin=C2-2
+Removed Pin From Net: NetName=+5V Pin=C3-1
+Removed Pin From Net: NetName=GND Pin=C3-2
+Removed Pin From Net: NetName=+5V Pin=C4-1
+Removed Pin From Net: NetName=GND Pin=C4-2
+Removed Pin From Net: NetName=+3V3 Pin=C5-1
+Removed Pin From Net: NetName=GND Pin=C5-2
+Removed Pin From Net: NetName=+3V3 Pin=C6-1
+Removed Pin From Net: NetName=GND Pin=C6-2
+Removed Pin From Net: NetName=3.3V SS Pin=C9-1
+Removed Pin From Net: NetName=GND Pin=C9-2
+Removed Pin From Net: NetName=GND Pin=CNR/SS1-2
+Removed Pin From Net: NetName=ADC_SDO Pin=R1-1
+Removed Pin From Net: NetName=ADC_BUSY_IRQ Pin=R1-2
+Removed Pin From Net: NetName=+5VA Pin=R10-1
+Removed Pin From Net: NetName=GND Pin=R11-2
+Removed Pin From Net: NetName=-5VA Pin=R12-1
+Removed Pin From Net: NetName=NetC14_1 Pin=R12-2
+Removed Pin From Net: NetName=NetC14_1 Pin=R13-1
+Removed Pin From Net: NetName=GND Pin=R13-2
+Change Component Footprint: Designator=C1 Old Footprint=0603_CAP New Footprint=GRM18x
+Change Component Footprint: Designator=R2 Old Footprint=0603_Res New Footprint=R0603
+Change Component Footprint: Designator=R3 Old Footprint=0603_Res New Footprint=R0603
+Change Component Footprint: Designator=R4 Old Footprint=0603_Res New Footprint=R0603
+Change Component Footprint: Designator=R1 Old Footprint=0603_Res New Footprint=RESC1608X55N
+Change Component Footprint: Designator=C10 Old Footprint=C0603Z New Footprint=C0603
+Change Component Footprint: Designator=C14 Old Footprint=C0603Z New Footprint=C0603
+Change Component Footprint: Designator=C13 Old Footprint=C0603Z New Footprint=CAPC2012X145N
+Change Component Footprint: Designator=C2 Old Footprint=C0603Z New Footprint=GRM18x
+Change Component Footprint: Designator=C9 Old Footprint=C0603Z New Footprint=GRM18x
+Change Component Footprint: Designator=C15 Old Footprint=C0603Z New Footprint=GRM18x
+Change Component Footprint: Designator=C3 Old Footprint=C1210Z New Footprint=C1210
+Change Component Footprint: Designator=C4 Old Footprint=C1210Z New Footprint=C1210
+Change Component Footprint: Designator=C5 Old Footprint=C1210Z New Footprint=C1210
+Change Component Footprint: Designator=C6 Old Footprint=C1210Z New Footprint=C1210
+Change Component Footprint: Designator=R5 Old Footprint=J1-0603 New Footprint=R0603
+Change Component Footprint: Designator=R6 Old Footprint=J1-0603 New Footprint=R0603
+Change Component Footprint: Designator=R10 Old Footprint=J1-0603 New Footprint=R0603
+Change Component Footprint: Designator=R12 Old Footprint=J1-0603 New Footprint=R0603
+Change Component Footprint: Designator=R13 Old Footprint=J1-0603 New Footprint=R0603
+Change Component Footprint: Designator=R7 Old Footprint=J1-0603 New Footprint=RESC1608X55N
+Change Component Footprint: Designator=R11 Old Footprint=J1-0603 New Footprint=RESC1608X55N
+Change Component Comment : Designator=C2 Old Comment=0.1uF New Comment=100nF/100V
+Change Component Comment : Designator=R3 Old Comment=1.0k次 (0.1%) New Comment=1k次
+Change Component Comment : Designator=C13 Old Comment=1uF New Comment=1uF 100V
+Change Component Comment : Designator=C15 Old Comment=1uF New Comment=1uF/25V
+Change Component Comment : Designator=R4 Old Comment=9.1k次(0.1%) New Comment=9.1k次
+Change Component Comment : Designator=C9 Old Comment=10nF New Comment=10nF/50V
+Change Component Comment : Designator=R6 Old Comment=11.5K次/1% New Comment=11.5k次
+Change Component Comment : Designator=C5 Old Comment=22uF/10V/Ceramic New Comment=22uF
+Change Component Comment : Designator=C6 Old Comment=22uF/10V/Ceramic New Comment=22uF
+Change Component Comment : Designator=C3 Old Comment=22uF/25V/Ceramic New Comment=22uF
+Change Component Comment : Designator=C4 Old Comment=22uF/25V/Ceramic New Comment=22uF
+Change Component Comment : Designator=R2 Old Comment=25次(1%) New Comment=22次
+Change Component Comment : Designator=R7 Old Comment=100K次/1% New Comment=100k次
+Change Component Comment : Designator=R1 Old Comment=100次 (1%) New Comment=100次
+Change Component Comment : Designator=R5 Old Comment=301K次/1% New Comment=301k次
+Change Component Comment : Designator=C10 Old Comment=1000pF New Comment=1nF
+Change Component Comment : Designator=C1 Old Comment=AVX 06035C104KAT2A New Comment=100nF/100V
+Added Component: Designator=C20(GRM18x)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "GRM188Z71A106KA73D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/grm188z71a106ka73d/murata-manufacturing?utm_currency=USD&region=europe"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188Z71A106KA73-01A.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.9mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "GRM188Z71A106KA73D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "81-GRM188Z71A106KA3D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM188Z71A106KA73D?qs=d0WKAl%252BL4KaRM1L%252BaIs%2FqQ%3D%3D"; VariantName = "[No Variations]"
+Added Component: Designator=C21(C1210-H2r50)
+Added Pin To Net: NetName=+5V Pin=C2-1
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=GND Pin=C3-1
+Added Pin To Net: NetName=+5V Pin=C3-2
+Added Pin To Net: NetName=GND Pin=C4-1
+Added Pin To Net: NetName=+5V Pin=C4-2
+Added Pin To Net: NetName=GND Pin=C5-1
+Added Pin To Net: NetName=+3V3 Pin=C5-2
+Added Pin To Net: NetName=GND Pin=C6-1
+Added Pin To Net: NetName=+3V3 Pin=C6-2
+Added Pin To Net: NetName=GND Pin=C9-1
+Added Pin To Net: NetName=3.3V SS Pin=C9-2
+Added Pin To Net: NetName=GND Pin=C20-1
+Added Pin To Net: NetName=GND Pin=C21-1
+Added Pin To Net: NetName=+6V Pin=C21-2
+Added Pin To Net: NetName=ADC_BUSY_IRQ Pin=R1-1
+Added Pin To Net: NetName=ADC_SDO Pin=R1-2
+Added Pin To Net: NetName=+5VA Pin=R10-2
+Added Pin To Net: NetName=GND Pin=R11-1
+Added Pin To Net: NetName=NetC14_1 Pin=R12-1
+Added Pin To Net: NetName=-5VA Pin=R12-2
+Added Pin To Net: NetName=GND Pin=R13-1
+Added Pin To Net: NetName=NetC14_1 Pin=R13-2
+Added Pin To Net: NetName=NetC20_2 Pin=C20-2
+Added Pin To Net: NetName=NetC20_2 Pin=U4-8
+Added Net: Name=NetC20_2
+Added Pin To Net: NetName=NetR10_1 Pin=R10-1
+Added Pin To Net: NetName=NetR10_1 Pin=R11-2
+Added Pin To Net: NetName=NetR10_1 Pin=U4-3
+Added Net: Name=NetR10_1
+Added Member To Class: ClassName=Power_Digital Member=Component C20 1uF/25V
+Added Member To Class: ClassName=Power_Digital Member=Component C21 10uF 50V
+Added Room: Name=Power_Digital

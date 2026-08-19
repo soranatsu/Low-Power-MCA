@@ -1,0 +1,69 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\÷£Ï„Ë∫\Documents\ZXT\AD15\GRID_DAQBoard_20210331\PCB\GRID_DAQBoard_V3.6.PcbDoc
+Date     : 2021/4/3
+Time     : 21:47:58
+
+Processing Rule : Clearance Constraint (Gap=6mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=4mil) (Max=100mil) (Preferred=15mil) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=200mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=6mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0mil) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=1mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Room Divider_2 (Bounding Region = (9007.076mil, 5082.988mil, 9290.541mil, 5612.988mil) (InComponentClass('Divider_2'))
+Rule Violations :0
+
+Processing Rule : Room U_03_ADC_On_Board (Bounding Region = (8773.454mil, 6388.13mil, 9220.954mil, 6790.515mil) (InComponentClass('U_03_ADC_On_Board'))
+Rule Violations :0
+
+Processing Rule : Room Divider_1 (Bounding Region = (9007.076mil, 5706.515mil, 9290.541mil, 6236.515mil) (InComponentClass('Divider_1'))
+Rule Violations :0
+
+Processing Rule : Room U_02_ADC_On_Board (Bounding Region = (8240.954mil, 6388.13mil, 8688.454mil, 6790.515mil) (InComponentClass('U_02_ADC_On_Board'))
+Rule Violations :0
+
+Processing Rule : Room U_00_ADC_On_Board (Bounding Region = (8240.954mil, 6843.13mil, 8688.454mil, 7245.515mil) (InComponentClass('U_00_ADC_On_Board'))
+Rule Violations :0
+
+Processing Rule : Room SiPMPowerSupply (Bounding Region = (9319.872mil, 5075.972mil, 9629.872mil, 5494.657mil) (InComponentClass('SiPMPowerSupply'))
+Rule Violations :0
+
+Processing Rule : Room U_01_ADC_On_Board (Bounding Region = (8773.454mil, 6843.13mil, 9220.954mil, 7245.515mil) (InComponentClass('U_01_ADC_On_Board'))
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+
+Violations Detected : 0
+Waived Violations : 0
+Time Elapsed        : 00:00:03

@@ -1,0 +1,11 @@
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/app.c:162:13:clear_statistics	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/app.c:77:16:queue_text	2
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/app.c:238:16:parse_u32	6
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/app.c:194:13:queue_status	3
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/app.c:431:16:queue_raw16_batch.isra	14
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/app.c:471:16:sample_service	14
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/app.c:555:6:App_Init	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/app.c:565:6:App_Run	103
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/app.c:577:6:App_USB_Rx	4
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/app.c:588:6:App_USB_TxComplete	2
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/app.c:597:6:App_USB_LinkState	1

@@ -1,0 +1,12 @@
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:102:16:ad7980_capture	6
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:66:6:AD7980_ResetStatistics	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:87:6:AD7980_Init	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:174:6:AD7980_BusyISR	2
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:189:6:AD7980_Service	6
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:238:6:AD7980_TryRead	3
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:256:6:AD7980_IsSdoLow	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:261:10:AD7980_GetBusyCount	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:266:10:AD7980_GetRecoveryCount	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:271:10:AD7980_GetPostReadLowCount	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:276:10:AD7980_GetOverrunCount	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:281:10:AD7980_GetQueueDepth	1

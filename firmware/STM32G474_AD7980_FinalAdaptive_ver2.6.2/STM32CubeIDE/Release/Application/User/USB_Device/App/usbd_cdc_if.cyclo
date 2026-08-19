@@ -1,0 +1,8 @@
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/USB_Device/App/usbd_cdc_if.c:183:15:CDC_Control_FS	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/USB_Device/App/usbd_cdc_if.c:330:15:CDC_TransmitCplt_FS	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/USB_Device/App/usbd_cdc_if.c:264:15:CDC_Receive_FS	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/USB_Device/App/usbd_cdc_if.c:168:15:CDC_DeInit_FS	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/USB_Device/App/usbd_cdc_if.c:153:15:CDC_Init_FS	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/USB_Device/App/usbd_cdc_if.c:285:9:CDC_Transmit_FS	3
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/USB_Device/App/usbd_cdc_if.c:299:9:CDC_IsConfigured_FS	2
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/USB_Device/App/usbd_cdc_if.c:305:6:CDC_AbortTransmit_FS	2

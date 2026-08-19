@@ -1,0 +1,13 @@
+STM32G474_AD7980_FinalAdaptive v2.5.0 build report
+Date: 2026-08-19
+STM32CubeIDE: 1.16.0 Release incremental rebuild after app.c update
+Result: 0 errors, 0 warnings
+ELF: STM32CubeIDE/Release/STM32G474_AD7980_FinalAdaptive.elf
+Size: text=31996, data=500, bss=89256, total=121752 bytes
+Firmware exports: Firmware/STM32G474_AD7980_FinalAdaptive.hex and .bin
+PC monitor: NuclearMcaMonitor_FinalAdaptive_v2.5.0.exe (older startup executables archived under PC_Monitor/his)
+PC self-test: all 14 parser, CRC, spectrum, exact cursor mapping, ROI/FWHM, impedance, editable gain/calibration, synchronized-window pass-rate, counter-reset rejection, linearity, log-axis and COM-deduplication checks passed
+PC UI preview: PASS; compact configuration layout, in-window edge-aware formula card, deduplicated automatic COM discovery, no startup focus highlight, and deliberate 850 ms hover delay verified
+Spectrum cursor preview: PASS; full-histogram exact count, raw-code/ADC/channel mapping, click lock and chart-internal edge avoidance verified
+Interaction: background status/chart updates do not commit a NumericUpDown currently being edited; arbitrary 1 mV amplitude metadata accepted from 100 to 900 mV
+Safety verification: external CNV, ADC/Restart timing, grounded-pin high-Z policy and USB CDC-only communication remain unchanged

@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=NetD1_3 Pin=D1-3
+Removed Pin From Net: NetName=AGND Pin=R10-1
+Removed Pin From Net: NetName=Restart Pin=R10-2
+Change Component Comment : Designator=R10 Old Comment=1M¦¸ New Comment=100k¦¸
+Added Component: Designator=R22(R0603)
+Added Pin To Net: NetName=Restart Pin=R10-1
+Added Pin To Net: NetName=AGND Pin=R10-2
+Added Pin To Net: NetName=NetD1_3 Pin=R22-2
+Change Net Name : Old Net Name=NetD1_3 New Net Name=NetR11_1
+Added Pin To Net: NetName=NetD1_3 Pin=D1-3
+Added Pin To Net: NetName=NetD1_3 Pin=R22-1
+Added Net: Name=NetD1_3
+Added Member To Class: ClassName=Peakhold Member=Component R22 0¦¸

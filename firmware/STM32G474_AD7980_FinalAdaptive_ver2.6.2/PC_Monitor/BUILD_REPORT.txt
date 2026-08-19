@@ -1,0 +1,19 @@
+NuclearMcaMonitor FinalAdaptive v2.6.2
+Build: PASS
+Output: NuclearMcaMonitor_FinalAdaptive_v2.6.2.exe
+Size: 130560 bytes
+Self-test: 18/18 PASS
+UI preview: PASS
+Empty-spectrum preview: PASS; axes visible before the first sample
+Spectrum cursor preview: PASS; local peak snap, local FWHM/resolution, click lock and in-chart edge avoidance
+Channel-mode switching: PASS; 4096/8192/16384/65536 modes atomically reset view, cursor and axis state
+Spectrum view: PASS; exact start/end range, main-peak zoom, ROI zoom, full-spectrum reset and wheel zoom
+Log/linear switching: PASS; empty bins remain valid and repeated switching does not retain invalid limits
+Metric value wrapping: PASS; long metric text scrolls via mouse wheel inside its card, clamps at first/last line, short text does not intercept the wheel; font rendering is pixel-identical to a plain Label (text drawn directly via TextRenderer, no bitmap pass, ClearType preserved)
+Pass-rate / efficiency colors: PASS; pass rate >=99% and <=100.1% turns green, efficiency >=99.9% turns green, out-of-range values keep the warning color
+Safety verification: PASS
+Firmware acquisition/protocol/physics calculations: unchanged
+Calibration: system standard is enabled by default and remains editable; no board-number-specific loader
+USB discovery: case-insensitive deduplication; low-cost periodic scan while disconnected
+Editing: background refresh does not commit or reformat an active numeric editor
+Archive: old executables and board-specific validation notes are kept under his

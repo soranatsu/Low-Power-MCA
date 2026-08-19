@@ -1,0 +1,1 @@
+visible=True; location=858,475; size=610x205; z=0; formula=测量时长

@@ -1,0 +1,10 @@
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c:537:13:FLASH_MassErase	4
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c:310:19:HAL_FLASHEx_OBProgram	50
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c:399:6:HAL_FLASHEx_OBGetConfig	15
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c:459:19:HAL_FLASHEx_EnableSecMemProtection	4
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c:497:6:HAL_FLASHEx_EnableDebugger	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c:509:6:HAL_FLASHEx_DisableDebugger	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c:582:6:FLASH_PageErase	3
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c:237:19:HAL_FLASHEx_Erase_IT	6
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c:620:6:FLASH_FlushCaches	3
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c:138:19:HAL_FLASHEx_Erase	10

@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=+5VA Pin=C12-1
+Removed Pin From Net: NetName=GND Pin=C12-2
+Removed Pin From Net: NetName=+5V Pin=C17-1
+Removed Pin From Net: NetName=GND Pin=C17-2
+Change Component Footprint: Designator=C12 Old Footprint=1210_CAP New Footprint=C1210-H2r50
+Change Component Footprint: Designator=C16 Old Footprint=1210_CAP New Footprint=C1210
+Change Component Footprint: Designator=C17 Old Footprint=1210_CAP New Footprint=C1210
+Change Component Comment : Designator=C12 Old Comment=10uF New Comment=10uF 50V
+Change component parameters: Designator = "C12" ("C12"); Footprint = "1210_CAP"; UniqueID = "\NXISONKM" ("\NXISONKM")
+Change component parameters: Designator = "C16" ("C16"); Footprint = "1210_CAP"; UniqueID = "\QWXJAHAT" ("\QWXJAHAT")
+Change component parameters: Designator = "C17" ("C17"); Footprint = "1210_CAP"; UniqueID = "\FREJKYTS" ("\FREJKYTS")
+Added Pin To Net: NetName=GND Pin=C12-1
+Added Pin To Net: NetName=+5VA Pin=C12-2
+Added Pin To Net: NetName=GND Pin=C17-1
+Added Pin To Net: NetName=+5V Pin=C17-2
+Added Room: Name=Power_Digital

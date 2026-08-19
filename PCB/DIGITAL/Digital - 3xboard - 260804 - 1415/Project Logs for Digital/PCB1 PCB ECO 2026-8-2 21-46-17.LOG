@@ -1,0 +1,15 @@
+Change Class Name : Old Net Name=00_POWER New Net Name=Power_Digital
+Added Member To Class: ClassName=Power_Digital Member=Component C1 AVX 06035C104KAT2A
+Added Member To Class: ClassName=Power_Digital Member=Component J1 Header_2x22_Female_P2.54
+Added Member To Class: ClassName=Power_Digital Member=Component J2 Header_2x22_Female_P2.54
+Added Member To Class: ClassName=Power_Digital Member=Component MH1 Mounting Hole (Screw)
+Added Member To Class: ClassName=Power_Digital Member=Component MH2 Mounting Hole (Screw)
+Added Member To Class: ClassName=Power_Digital Member=Component P1 Header_2x20_male_P2.54
+Added Member To Class: ClassName=Power_Digital Member=Component R1 100次 (1%)
+Added Member To Class: ClassName=Power_Digital Member=Component R2 25次(1%)
+Added Member To Class: ClassName=Power_Digital Member=Component R3 1.0k次 (0.1%)
+Added Member To Class: ClassName=Power_Digital Member=Component R4 9.1k次(0.1%)
+Added Member To Class: ClassName=Power_Digital Member=Component RF1 HJ-SMA508
+Added Member To Class: ClassName=Power_Digital Member=Component U1 lm66100dckr_c2869734
+Change Room Name: Old Name=Digital New Name=Power_Digital
+Change Room Scope: Old Scope=InComponentClass('Digital') New Scope=InComponentClass('Power_Digital')

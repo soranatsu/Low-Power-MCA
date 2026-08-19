@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=-5VA Pin=T1-1
+Removed Pin From Net: NetName=+5V Pin=T1-2
+Removed Pin From Net: NetName=NetC15_2 Pin=T1-3
+Removed Pin From Net: NetName=NetC15_1 Pin=T1-4
+Change Component Footprint: Designator=T1 Old Footprint=SUMIDACLS62-100 New Footprint=SMD-4P,6.8x6.6mm
+Change Component Comment : Designator=T1 Old Comment=CLS62-100 New Comment=CLS62NP-100NC
+Change component parameters: Designator = "T1" ("T1"); Footprint = "SUMIDACLS62-100"; UniqueID = "\URZLXKMM" ("\URZLXKMM")
+Added Pin To Net: NetName=NetC15_1 Pin=T1-1
+Added Pin To Net: NetName=NetC15_2 Pin=T1-2
+Added Pin To Net: NetName=+5V Pin=T1-3
+Added Pin To Net: NetName=-5VA Pin=T1-4
+Added Room: Name=Power_Digital

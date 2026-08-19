@@ -1,0 +1,13 @@
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c:1051:13:DMA_CalcDMAMUXChannelBaseAndMask	2
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c:152:19:HAL_DMA_Init	5
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c:263:19:HAL_DMA_DeInit	4
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c:378:19:HAL_DMA_Start	5
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c:421:19:HAL_DMA_Start_IT	8
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c:491:19:HAL_DMA_Abort	4
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c:550:19:HAL_DMA_Abort_IT	4
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c:618:19:HAL_DMA_PollForTransfer	13
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c:748:6:HAL_DMA_IRQHandler	12
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c:842:19:HAL_DMA_RegisterCallback	7
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c:893:19:HAL_DMA_UnRegisterCallback	8
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c:970:22:HAL_DMA_GetState	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c:982:10:HAL_DMA_GetError	1

@@ -1,0 +1,12 @@
+Change Component Footprint: Designator=C19 Old Footprint=0603_CAP New Footprint=GRM18x
+Change Component Comment : Designator=C19 Old Comment=AVX 06035C104KAT2A New Comment=100nF/100V
+Change component parameters: Designator = "C19" ("C19"); Footprint = "0603_CAP"; UniqueID = "\RQTDETIA" ("\RQTDETIA")
+Change component parameters (AddParameter): Name = "Arrow Part Number"; Value = "GRM188Z71A106KA73D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/grm188z71a106ka73d/murata-manufacturing?utm_currency=USD&region=europe"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Link"; Value = "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188Z71A106KA73-01A.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "0.9mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "GRM188Z71A106KA73D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Part Number"; Value = "81-GRM188Z71A106KA3D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM188Z71A106KA73D?qs=d0WKAl%252BL4KaRM1L%252BaIs%2FqQ%3D%3D"; VariantName = "[No Variations]"
+Added Room: Name=Power_Digital

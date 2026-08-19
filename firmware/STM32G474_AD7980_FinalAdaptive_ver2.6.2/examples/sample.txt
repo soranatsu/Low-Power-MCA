@@ -1,0 +1,2 @@
+sample t_ms=1542 seq=100 raw=26214 mV=1000 ch=512 expected=500mV/1000Hz threshold=75mV overrun=0 drop=0
+sample t_ms=1642 seq=200 raw=26226 mV=1000 ch=512 expected=500mV/1000Hz threshold=75mV overrun=0 drop=0

@@ -1,0 +1,12 @@
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:102:16:ad7980_capture	24	static,ignoring_inline_asm
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:66:6:AD7980_ResetStatistics	8	static,ignoring_inline_asm
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:87:6:AD7980_Init	8	static
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:174:6:AD7980_BusyISR	8	static
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:189:6:AD7980_Service	40	static,ignoring_inline_asm
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:238:6:AD7980_TryRead	0	static,ignoring_inline_asm
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:256:6:AD7980_IsSdoLow	0	static
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:261:10:AD7980_GetBusyCount	0	static
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:266:10:AD7980_GetRecoveryCount	0	static
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:271:10:AD7980_GetPostReadLowCount	0	static
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:276:10:AD7980_GetOverrunCount	0	static
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/ad7980.c:281:10:AD7980_GetQueueDepth	0	static

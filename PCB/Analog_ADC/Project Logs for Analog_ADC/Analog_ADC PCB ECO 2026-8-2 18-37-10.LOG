@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=C19 Old Footprint=CASE-D New Footprint=C1210-H2r50
+Change Component Footprint: Designator=C21 Old Footprint=CASE-D New Footprint=C1210-H2r50
+Change Component Comment : Designator=C19 Old Comment=10uF New Comment=10uF 50V
+Change Component Comment : Designator=C21 Old Comment=10uF New Comment=10uF 50V

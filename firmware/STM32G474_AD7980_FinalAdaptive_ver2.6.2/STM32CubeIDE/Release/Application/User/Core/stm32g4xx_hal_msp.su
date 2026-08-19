@@ -1,0 +1,3 @@
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/stm32g4xx_hal_msp.c:62:6:HAL_MspInit	8	static
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/stm32g4xx_hal_msp.c:89:6:HAL_DAC_MspInit	40	static
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Core/Src/stm32g4xx_hal_msp.c:123:6:HAL_DAC_MspDeInit	0	static

@@ -1,0 +1,33 @@
+Added Pin To Net: NetName=GND Pin=P1-1
+Added Pin To Net: NetName=GND Pin=P1-2
+Added Pin To Net: NetName=GND Pin=P1-7
+Added Pin To Net: NetName=GND Pin=P1-8
+Added Pin To Net: NetName=GND Pin=P1-13
+Added Pin To Net: NetName=GND Pin=P1-14
+Added Pin To Net: NetName=GND Pin=P1-19
+Added Pin To Net: NetName=GND Pin=P1-20
+Added Pin To Net: NetName=GND Pin=P1-25
+Added Pin To Net: NetName=GND Pin=P1-26
+Added Pin To Net: NetName=GND Pin=P1-27
+Added Pin To Net: NetName=GND Pin=P1-30
+Added Pin To Net: NetName=GND Pin=P1-32
+Added Pin To Net: NetName=GND Pin=P1-33
+Added Pin To Net: NetName=GND Pin=P1-34
+Added Pin To Net: NetName=GND Pin=P1-36
+Added Pin To Net: NetName=GND Pin=P1-37
+Added Pin To Net: NetName=GND Pin=P1-39
+Added Pin To Net: NetName=GND Pin=P1-40
+Added Pin To Net: NetName=GND Pin=U90-4
+Added Pin To Net: NetName=GND Pin=U90-11
+Added Pin To Net: NetName=GND Pin=U90-11
+Added Pin To Net: NetName=GND Pin=U90-11
+Added Pin To Net: NetName=GND Pin=U90-11
+Added Room: Name=00_POWER
+Added Room: Name=Digital
+Added Rule: Name=Schematic Supply Nets
+Added Rule: Name=Schematic Supply Nets_1
+Added Rule: Name=Schematic Supply Nets_2
+Added Rule: Name=Schematic Supply Nets_3
+Added Rule: Name=Schematic Supply Nets_4
+Added Rule: Name=Schematic Supply Nets_5
+Added Rule: Name=Schematic Supply Nets_6

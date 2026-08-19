@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=Threshold Pin=P1-38
+Added Component: Designator=R14(R0603)
+Added Pin To Net: NetName=Threshold Pin=R14-2
+Change Net Name : Old Net Name=Threshold New Net Name=NetC1_1
+Added Pin To Net: NetName=Threshold Pin=P1-38
+Added Pin To Net: NetName=Threshold Pin=R14-1
+Added Net: Name=Threshold
+Added Member To Class: ClassName=Power_Digital Member=Component R14 0¦¸
+Added Room: Name=Power_Digital

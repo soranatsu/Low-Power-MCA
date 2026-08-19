@@ -1,0 +1,6 @@
+Change Component Footprint: Designator=MH1 Old Footprint=MOUNT_PAD_L-M3 New Footprint=MOUNT_PAD_L
+Change Component Footprint: Designator=MH2 Old Footprint=MOUNT_PAD_L-M3 New Footprint=MOUNT_PAD_L
+Added Pin To Net: NetName=GND Pin=MH1-1
+Added Pin To Net: NetName=GND Pin=MH2-1
+Added Room: Name=00_POWER
+Added Room: Name=Digital

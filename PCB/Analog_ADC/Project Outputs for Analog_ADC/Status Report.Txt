@@ -1,0 +1,11 @@
+Output: Generates pick and place files
+Type  : Pick Place
+From  : Variant [[No Variations]] of Project [Analog_ADC.PrjPcb]
+   Generated File[Pick Place for Analog_ADC.txt]
+   Generated File[Pick Place for Analog_ADC.csv]
+
+
+Files Generated   : 2
+Documents Printed : 0
+
+Finished Output Generation At 17:32:23 On 2026/8/4

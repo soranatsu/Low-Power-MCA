@@ -1,0 +1,216 @@
+Removed Pin From Net: NetName=GND Pin=J2_1-1
+Removed Pin From Net: NetName=GND Pin=J2_1-2
+Removed Pin From Net: NetName=-5VA Pin=J2_1-3
+Removed Pin From Net: NetName=-5VA Pin=J2_1-4
+Removed Pin From Net: NetName=-5VA Pin=J2_1-5
+Removed Pin From Net: NetName=-5VA Pin=J2_1-6
+Removed Pin From Net: NetName=GND Pin=J2_1-7
+Removed Pin From Net: NetName=GND Pin=J2_1-8
+Removed Pin From Net: NetName=+5V Pin=J2_1-9
+Removed Pin From Net: NetName=+5V Pin=J2_1-10
+Removed Pin From Net: NetName=+5V Pin=J2_1-11
+Removed Pin From Net: NetName=+5V Pin=J2_1-12
+Removed Pin From Net: NetName=GND Pin=J2_1-13
+Removed Pin From Net: NetName=GND Pin=J2_1-14
+Removed Pin From Net: NetName=+5VA Pin=J2_1-15
+Removed Pin From Net: NetName=+5VA Pin=J2_1-16
+Removed Pin From Net: NetName=+5VA Pin=J2_1-17
+Removed Pin From Net: NetName=+5VA Pin=J2_1-18
+Removed Pin From Net: NetName=GND Pin=J2_1-19
+Removed Pin From Net: NetName=GND Pin=J2_1-20
+Removed Pin From Net: NetName=GND Pin=J2_1-25
+Removed Pin From Net: NetName=GND Pin=J2_1-26
+Removed Pin From Net: NetName=Restart Pin=J2_1-27
+Removed Pin From Net: NetName=GND Pin=J2_1-28
+Removed Pin From Net: NetName=GND Pin=J2_1-29
+Removed Pin From Net: NetName=ADC_SCK Pin=J2_1-30
+Removed Pin From Net: NetName=GND Pin=J2_1-31
+Removed Pin From Net: NetName=ADC_SDO Pin=J2_1-32
+Removed Pin From Net: NetName=GND Pin=J2_1-33
+Removed Pin From Net: NetName=GND Pin=J2_1-34
+Removed Pin From Net: NetName=GND Pin=J2_1-35
+Removed Pin From Net: NetName=ADC_CNV Pin=J2_1-36
+Removed Pin From Net: NetName=Threshold Pin=J2_1-37
+Removed Pin From Net: NetName=GND Pin=J2_1-38
+Removed Pin From Net: NetName=GND Pin=J2_1-39
+Removed Pin From Net: NetName=GND Pin=J2_1-40
+Removed Member From Class: ClassName=Digital Member=R10
+Removed Member From Class: ClassName=Digital Member=R11
+Removed Member From Class: ClassName=Digital Member=U2
+Change component parameters: Designator = "U1" ("U1"); Footprint = "SC-70-6_L2.0-W1.3-P0.65-LS2.1-BL"; UniqueID = "\LZSCXPPE" ("\LZSCXPPE")
+Change component parameters (AddParameter): Name = "AddInBom"; Value = "yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Continuous Current (Imax)"; Value = "1.5A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ConvertToPcb"; Value = "yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet"; Value = "https://www.ti.com/cn/lit/ds/symlink/lm66100.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Features"; Value = "???;??????;??????"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "FET Type"; Value = "??FET"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "FootprintName"; Value = "SC-70-6_L2.0-W1.3-P0.65-LS2.1-BL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Gate Drive Voltage"; Value = "-"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Input Voltage (Vin)"; Value = "1.5V~5.5V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "JLCPCB Part Class"; Value = "Extended Part"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LCSC Part Name"; Value = "5.5-V, 1.5-A 79-mO, ??????????,???????"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "TI(????)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ManufacturerPart"; Value = "LM66100DCKR"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ModelId"; Value = "f94192922c2c45638905c20accdb682a"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ModelName"; Value = "SC-70-6_L2.0-W1.3-P0.65-LS2.1-BL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ModelTransform"; Value = "78.74,82.677,0,0,0,0,0,0,0"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Number of Channels"; Value = "1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Operating Temperature"; Value = "-40?~+125?"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Peak Output Current(Sink)"; Value = "-"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Peak Output Current(Source)"; Value = "-"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Quiescent Current"; Value = "150nA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RDS(on)"; Value = "95mO"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Reverse Breakdown Voltage"; Value = "-"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Footprint"; Value = "SC-70-6"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SupplierPart"; Value = "C2869734"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Symbol"; Value = "LM66100DCKR"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage - Forward(Vf)"; Value = "-"; VariantName = "[No Variations]"
+Change component parameters: Designator = "J1" ("J1"); Footprint = "HDR-TH_44P-P2.54-V-F-R2-C22-S2.54"; UniqueID = "\PHSPCVFA" ("\PHSPCVFA")
+Change component parameters (AddParameter): Name = "AddInBom"; Value = "yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Circular Hole / Square Hole"; Value = "??"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Contact Material"; Value = "??"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Contact Plating"; Value = "?"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ConvertToPcb"; Value = "yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Current Rating"; Value = "3A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet"; Value = "https://item.szlcsc.com/datasheet/HC-PM254-8.5H-2x22PZ/29721195.html"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "FootprintName"; Value = "HDR-TH_44P-P2.54-V-F-R2-C22-S2.54"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Holes Direction"; Value = "??"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Holes Structure"; Value = "2x22P"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Insulation Height"; Value = "8.5mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "JLCPCB Part Class"; Value = "Extended Part"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LCSC Part Name"; Value = "??2.54mm 2x22Pin ?? PC3.0 H8.5"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "HC(????)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ManufacturerPart"; Value = "HC-PM254-8.5H-2x22PZ"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ModelId"; Value = "8628157f506e414985f81877c3f45c3f"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ModelName"; Value = "HDR-TH_44P-P2.54-F-LI-2X22P"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ModelTransform"; Value = "2199.99552,200,0,0,0,0,0,0,-118.11"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Type"; Value = "??"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Number of Positions"; Value = "44P"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Number of Rows"; Value = "??"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Operating Temperature"; Value = "-40?~+105?"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PIN Length"; Value = "3mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Row Spacing"; Value = "2.54mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplementary Features"; Value = "-"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Footprint"; Value = "??,P=2.54mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SupplierPart"; Value = "C27985237"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Symbol"; Value = "HC-PM254-8.5H-2X22PZ"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage Rating (Max)"; Value = "-"; VariantName = "[No Variations]"
+Change component parameters: Designator = "J2" ("J2"); Footprint = "HDR-TH_44P-P2.54-V-F-R2-C22-S2.54"; UniqueID = "\DUVJMAOQ" ("\DUVJMAOQ")
+Change component parameters (AddParameter): Name = "AddInBom"; Value = "yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Circular Hole / Square Hole"; Value = "??"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Contact Material"; Value = "??"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Contact Plating"; Value = "?"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ConvertToPcb"; Value = "yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Current Rating"; Value = "3A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet"; Value = "https://item.szlcsc.com/datasheet/HC-PM254-8.5H-2x22PZ/29721195.html"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "FootprintName"; Value = "HDR-TH_44P-P2.54-V-F-R2-C22-S2.54"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Holes Direction"; Value = "??"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Holes Structure"; Value = "2x22P"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Insulation Height"; Value = "8.5mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "JLCPCB Part Class"; Value = "Extended Part"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LCSC Part Name"; Value = "??2.54mm 2x22Pin ?? PC3.0 H8.5"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "HC(????)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ManufacturerPart"; Value = "HC-PM254-8.5H-2x22PZ"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ModelId"; Value = "8628157f506e414985f81877c3f45c3f"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ModelName"; Value = "HDR-TH_44P-P2.54-F-LI-2X22P"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ModelTransform"; Value = "2199.99552,200,0,0,0,0,0,0,-118.11"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Type"; Value = "??"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Number of Positions"; Value = "44P"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Number of Rows"; Value = "??"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Operating Temperature"; Value = "-40?~+105?"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PIN Length"; Value = "3mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Row Spacing"; Value = "2.54mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplementary Features"; Value = "-"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Footprint"; Value = "??,P=2.54mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SupplierPart"; Value = "C27985237"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Symbol"; Value = "HC-PM254-8.5H-2X22PZ"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage Rating (Max)"; Value = "-"; VariantName = "[No Variations]"
+Added Component: Designator=P1(2541WV-2x20P)
+Add component (AddParameter): Name = "AddInBom"; Value = "yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Circluar Pins/Square Pins"; Value = "??"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Material"; Value = "??"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Plating"; Value = "?"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ConvertToPcb"; Value = "yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Current Rating"; Value = "3A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet"; Value = "https://item.szlcsc.com/datasheet/2541WV-2x20P/27233683.html"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "FootprintName"; Value = "HDR-TH_40P-P2.54-V-M-R2-C20-S2.54"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Insulation Height"; Value = "2.54mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "JLCPCB Part Class"; Value = "Extended Part"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LCSC Part Name"; Value = "2x20P ??:2.54mm ?? ??"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length of End Connection Pin"; Value = "3mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length of Mating Pin"; Value = "6mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "HanElectricity(??)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ManufacturerPart"; Value = "2541WV-2x20P"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ModelId"; Value = "2f697d2f705a4509bdac70452e51b3cc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ModelName"; Value = "HDR-TH_40P-P2.54-M-LI-2X20P"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ModelTransform"; Value = "1999.996,196.85,0,0,0,0,0,0,-118.11"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "??"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Pins"; Value = "40P"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Rows"; Value = "??"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-55?~+105?"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Structure"; Value = "2x20P"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Row Spacing"; Value = "2.54mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Footprint"; Value = "??,P=2.54mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SupplierPart"; Value = "C25503140"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Symbol"; Value = "2541WV-2X20P"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=P1-1
+Added Pin To Net: NetName=GND Pin=P1-2
+Added Pin To Net: NetName=-5VA Pin=P1-3
+Added Pin To Net: NetName=-5VA Pin=P1-4
+Added Pin To Net: NetName=-5VA Pin=P1-5
+Added Pin To Net: NetName=-5VA Pin=P1-6
+Added Pin To Net: NetName=GND Pin=P1-7
+Added Pin To Net: NetName=GND Pin=P1-8
+Added Pin To Net: NetName=+5V Pin=P1-9
+Added Pin To Net: NetName=+5V Pin=P1-10
+Added Pin To Net: NetName=+5V Pin=P1-11
+Added Pin To Net: NetName=+5V Pin=P1-12
+Added Pin To Net: NetName=GND Pin=P1-13
+Added Pin To Net: NetName=GND Pin=P1-14
+Added Pin To Net: NetName=+5VA Pin=P1-15
+Added Pin To Net: NetName=+5VA Pin=P1-16
+Added Pin To Net: NetName=+5VA Pin=P1-17
+Added Pin To Net: NetName=+5VA Pin=P1-18
+Added Pin To Net: NetName=GND Pin=P1-19
+Added Pin To Net: NetName=GND Pin=P1-20
+Added Pin To Net: NetName=3V3 Pin=P1-21
+Added Pin To Net: NetName=3V3 Pin=P1-22
+Added Pin To Net: NetName=3V3 Pin=P1-23
+Added Pin To Net: NetName=3V3 Pin=P1-24
+Added Pin To Net: NetName=GND Pin=P1-25
+Added Pin To Net: NetName=GND Pin=P1-26
+Added Pin To Net: NetName=GND Pin=P1-27
+Added Pin To Net: NetName=Restart Pin=P1-28
+Added Pin To Net: NetName=ADC_SCK Pin=P1-29
+Added Pin To Net: NetName=GND Pin=P1-30
+Added Pin To Net: NetName=ADC_SDO Pin=P1-31
+Added Pin To Net: NetName=GND Pin=P1-32
+Added Pin To Net: NetName=GND Pin=P1-33
+Added Pin To Net: NetName=GND Pin=P1-34
+Added Pin To Net: NetName=ADC_CNV Pin=P1-35
+Added Pin To Net: NetName=GND Pin=P1-36
+Added Pin To Net: NetName=GND Pin=P1-37
+Added Pin To Net: NetName=Threshold Pin=P1-38
+Added Pin To Net: NetName=GND Pin=P1-39
+Added Pin To Net: NetName=GND Pin=P1-40
+Change Net Name : Old Net Name=3V3 New Net Name=+3V3
+Added Member To Class: ClassName=00_POWER Member=Component C2 0.1uF
+Added Member To Class: ClassName=00_POWER Member=Component C3 22uF/25V/Ceramic
+Added Member To Class: ClassName=00_POWER Member=Component C4 22uF/25V/Ceramic
+Added Member To Class: ClassName=Digital Member=Component P1 Header_2x20_male_P2.54
+Added Member To Class: ClassName=Digital Member=Component R1 100O (1%)
+Added Member To Class: ClassName=Digital Member=Component R2 25O(1%)
+Added Member To Class: ClassName=Digital Member=Component R3 1.0kO (0.1%)
+Added Member To Class: ClassName=Digital Member=Component R4 9.1kO(0.1%)
+Added Member To Class: ClassName=00_POWER Member=Component R6 11.5KO/1%
+Added Member To Class: ClassName=00_POWER Member=Component R7 100KO/1%
+Added Member To Class: ClassName=Digital Member=Component U1 lm66100dckr_c2869734
+Added Room: Name=00_POWER
+Added Room: Name=Digital

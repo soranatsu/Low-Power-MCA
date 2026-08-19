@@ -1,0 +1,15 @@
+Removed Pin From Net: NetName=NetR29_1 Pin=U2-6
+Change Component Designator: OldDesignator=R4 NewDesignator=RT4
+Change Component Designator: OldDesignator=R16 NewDesignator=RT16
+Change Component Designator: OldDesignator=R22 NewDesignator=RT22
+Added Component: Designator=R33(R0603)
+Added Component: Designator=RT31(R0603)
+Added Pin To Net: NetName=+3V3 Pin=R33-1
+Added Pin To Net: NetName=NetR29_1 Pin=R33-2
+Added Pin To Net: NetName=NetR29_1 Pin=RT31-2
+Change Net Name : Old Net Name=NetR4_2 New Net Name=NetR5_1
+Added Pin To Net: NetName=NetRT31_1 Pin=RT31-1
+Added Pin To Net: NetName=NetRT31_1 Pin=U2-6
+Added Net: Name=NetRT31_1
+Added Member To Class: ClassName=Trigger Member=Component R33 47k¦¸
+Added Member To Class: ClassName=Trigger Member=Component RT31 0¦¸

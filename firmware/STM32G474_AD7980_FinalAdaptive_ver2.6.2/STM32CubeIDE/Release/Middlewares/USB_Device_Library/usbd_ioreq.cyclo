@@ -1,0 +1,7 @@
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c:87:20:USBD_CtlSendData	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c:114:20:USBD_CtlContinueSendData	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c:131:20:USBD_CtlPrepareRx	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c:158:20:USBD_CtlContinueRx	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c:172:20:USBD_CtlSendStatus	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c:189:20:USBD_CtlReceiveStatus	1
+C:/Users/sora/Documents/Codex/2026-08-05/stm32g474vet6-ad7980-arm-brm-adg721-stm32cubemx/outputs/STM32G474_AD7980_FinalAdaptive/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c:207:10:USBD_GetRxCount	1
