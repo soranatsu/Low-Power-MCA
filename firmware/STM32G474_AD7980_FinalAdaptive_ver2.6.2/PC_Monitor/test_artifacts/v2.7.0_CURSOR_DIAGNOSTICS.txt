@@ -1,0 +1,1 @@
+visible=True; pinned=True; channel=2048; card={X=566,Y=177,Width=390,Height=149}; plot={X=78.60001,Y=44,Width=943.2,Height=307}

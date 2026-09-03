@@ -1,0 +1,2 @@
+tab=采集与显示; client=363x457; min=0x776; displayHeight=776; verticalVisible=True; scrollY=319; contentHeight=756; directChildBottom=751
+tab=输入/阻抗/校准; client=363x457; min=0x674; displayHeight=674; verticalVisible=True; scrollY=217; contentHeight=654; directChildBottom=642

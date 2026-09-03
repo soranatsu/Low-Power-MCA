@@ -624,7 +624,7 @@ namespace NuclearMcaMonitor
         private readonly ComboBox logLevelBox = new ComboBox();
         private readonly Label liveSummaryLabel = new Label();
         private readonly TabControl sideTabs = new TabControl();
-        private readonly GroupBox controlGroup = new GroupBox();
+        private readonly TableLayoutPanel controlGroup = new TableLayoutPanel();
         private readonly ComboBox profileBox = new ComboBox();
         private readonly NumericUpDown thresholdInput = new NumericUpDown();
         private readonly NumericUpDown amplitudeInput = new NumericUpDown();
@@ -653,6 +653,7 @@ namespace NuclearMcaMonitor
         private readonly Label impedanceSummary = new Label();
         private readonly Label correctionSummary = new Label();
         private readonly Label linearitySummary = new Label();
+        private readonly Label replayStatusLabel = new Label();
         private readonly DataGridView testPointGrid = new DataGridView();
         private readonly Button recordButton = new Button();
         private readonly Label recordLabel = new Label();
@@ -679,6 +680,7 @@ namespace NuclearMcaMonitor
         private readonly Label elapsedValue = MetricLabel();
         private readonly System.Windows.Forms.Timer serviceTimer = new System.Windows.Forms.Timer();
         private readonly Dictionary<Control, FormulaSpec> metricFormulae = new Dictionary<Control, FormulaSpec>();
+        private readonly Dictionary<TabPage, Action> scrollablePageLayouts = new Dictionary<TabPage, Action>();
         private readonly Panel formulaHoverCard = new Panel();
         private readonly System.Windows.Forms.Timer formulaHoverTimer = new System.Windows.Forms.Timer();
         private Control pendingFormulaControl;
@@ -753,10 +755,12 @@ namespace NuclearMcaMonitor
         private int viewStartChannel;
         private int viewEndChannelExclusive = 4096;
         private bool synchronizingSpectrumView;
+        private bool offlineReplayActive;
+        private string offlineReplayPath;
 
         public MainForm()
         {
-            Text = "STM32G474 + AD7980 自适应道址分析系统 v2.6.0";
+            Text = "STM32G474 + AD7980 自适应道址分析系统 v2.7.6";
             Width = 1500;
             Height = 900;
             MinimumSize = new Size(1200, 760);
@@ -768,7 +772,11 @@ namespace NuclearMcaMonitor
             ConfigureFormulaHoverCard();
             SetConnectedState(false);
             RefreshPorts(true);
-            Shown += delegate { ActiveControl = null; };
+            Shown += delegate
+            {
+                ActiveControl = null;
+                RefreshSelectedScrollablePage();
+            };
             serviceTimer.Interval = 400;
             serviceTimer.Tick += ServiceTimerTick;
             serviceTimer.Start();
@@ -875,7 +883,7 @@ namespace NuclearMcaMonitor
             content.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             shell.Controls.Add(content, 0, 2);
 
-            Panel left = new Panel { Dock = DockStyle.Fill, Padding = new Padding(10, 10, 6, 8), AutoScroll = true, BackColor = Canvas };
+            Panel left = new Panel { Dock = DockStyle.Fill, Padding = new Padding(10, 10, 6, 16), AutoScroll = true, BackColor = Canvas };
             content.Controls.Add(left, 0, 0);
             BuildControlPanel(left);
 
@@ -896,26 +904,41 @@ namespace NuclearMcaMonitor
             sideTabs.Padding = new Point(12, 5);
             sideTabs.DrawItem += DrawSideTab;
             parent.Controls.Add(sideTabs);
+            /* 页签使用系统原生绘制。频闪从滚动布局的重复收敛处消除，
+             * 不给原生 TabControl 强加 UserPaint/双缓冲，避免透明 GroupBox 漏绘。 */
             TabPage acquisitionTab = new TabPage("采集与显示");
             TabPage inputTab = new TabPage("输入/阻抗/校准");
             TabPage testTab = new TabPage("测试点与报告");
             sideTabs.TabPages.Add(acquisitionTab);
             sideTabs.TabPages.Add(inputTab);
             sideTabs.TabPages.Add(testTab);
+            sideTabs.SelectedIndexChanged += delegate
+            {
+                /* SelectedIndexChanged 发生时新页仍可能处于隐藏阶段。延迟到本轮消息之后，
+                 * 再对已经可见的页执行一次原子重绘，避免透明标签和 GroupBox 漏绘。 */
+                if (!IsHandleCreated) return;
+                BeginInvoke((MethodInvoker)delegate { RefreshSelectedScrollablePage(); });
+            };
             acquisitionTab.BackColor = Surface;
             inputTab.BackColor = Surface;
             testTab.BackColor = Surface;
+            acquisitionTab.AutoScroll = true;
+            inputTab.AutoScroll = true;
 
-            controlGroup.Text = "采集控制（全部带范围校验）";
-            controlGroup.Dock = DockStyle.Fill;
+            controlGroup.Dock = DockStyle.Top;
+            controlGroup.AutoSize = false;
             controlGroup.ForeColor = TextPrimary;
+            controlGroup.BackColor = Surface;
+            controlGroup.Padding = new Padding(8);
+            controlGroup.ColumnCount = 2;
+            controlGroup.RowCount = 16;
+            controlGroup.AutoScroll = false;
+            controlGroup.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 38));
+            controlGroup.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 62));
+            controlGroup.RowStyles.Clear();
+            for (int row = 0; row < 16; row++) controlGroup.RowStyles.Add(new RowStyle(SizeType.AutoSize));
             acquisitionTab.Controls.Add(controlGroup);
-            TableLayoutPanel table = new TableLayoutPanel { Dock = DockStyle.Fill, Padding = new Padding(8), ColumnCount = 2, RowCount = 16, AutoScroll = true };
-            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 38));
-            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 62));
-            table.RowStyles.Clear();
-            for (int row = 0; row < 16; row++) table.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-            controlGroup.Controls.Add(table);
+            TableLayoutPanel table = controlGroup;
 
             profileBox.DropDownStyle = ComboBoxStyle.DropDownList;
             profileBox.Items.AddRange(new object[] { "未知信号（默认，仅测量）", "baseline 500mV/1kHz", "amplitude 幅度扫描", "frequency 频率扫描" });
@@ -973,7 +996,14 @@ namespace NuclearMcaMonitor
             pauseDisplayCheck.Text = "暂停图形刷新（采集继续）";
             AddRow(table, 13, "界面刷新", pauseDisplayCheck);
 
-            FlowLayoutPanel actions = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.LeftToRight, WrapContents = true };
+            FlowLayoutPanel actions = new FlowLayoutPanel
+            {
+                Dock = DockStyle.Fill,
+                FlowDirection = FlowDirection.LeftToRight,
+                WrapContents = true,
+                AutoSize = true,
+                AutoSizeMode = AutoSizeMode.GrowAndShrink
+            };
             Button statusButton = SmallButton("读取状态", delegate { SendSafe("status"); });
             Button dumpButton = SmallButton("立即刷新能谱", delegate { RequestHistogram(); });
             Button clearButton = SmallButton("清空统计", delegate { ClearStatistics(); });
@@ -1000,15 +1030,126 @@ namespace NuclearMcaMonitor
             table.Controls.Add(note, 0, 15);
             table.SetColumnSpan(note, 2);
 
+            ConfigureScrollablePage(acquisitionTab, controlGroup, 20);
+
             BuildInputPanel(inputTab);
             BuildTestPanel(testTab);
         }
 
+        private void RefreshSelectedScrollablePage()
+        {
+            if (sideTabs.SelectedTab == null) return;
+            Action refresh;
+            if (scrollablePageLayouts.TryGetValue(sideTabs.SelectedTab, out refresh)) refresh();
+        }
+
+        private void ConfigureScrollablePage(TabPage page, Control content, int bottomPadding)
+        {
+            page.AutoScroll = true;
+            /* The left configuration pages are vertical forms.  Letting an AutoSize
+             * TableLayoutPanel choose its own width makes wide button rows enlarge the
+             * whole page, hides the label column and creates a horizontal scrollbar.
+             * Keep the content width tied to the viewport and calculate height only. */
+            content.AutoSize = false;
+            content.Dock = DockStyle.None;
+            content.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            content.Location = new Point(0, 0);
+            bool updating = false;
+            bool visibleLayoutCompleted = false;
+            int lastTargetWidth = -1;
+
+            Action<bool> updateLayout = delegate(bool forceFullLayout)
+            {
+                if (updating || page.IsDisposed || content.IsDisposed) return;
+                int targetWidth = Math.Max(120, page.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 6);
+                bool fullLayout = forceFullLayout || targetWidth != lastTargetWidth;
+                updating = true;
+                try
+                {
+                    page.SuspendLayout();
+                    content.SuspendLayout();
+                    if (fullLayout)
+                    {
+                        /* Measure from a neutral one-pixel height.  TableLayoutPanel's
+                         * preferred height otherwise feeds back from its previous height
+                         * after a tab switch and can create a large blank scroll region. */
+                        content.MinimumSize = Size.Empty;
+                        content.MaximumSize = Size.Empty;
+                        content.Size = new Size(targetWidth, 1);
+                        content.PerformLayout();
+                        lastTargetWidth = targetWidth;
+                    }
+
+                    int preferredHeight;
+                    TableLayoutPanel measuredTable = content as TableLayoutPanel;
+                    if (measuredTable != null)
+                    {
+                        /* TableLayoutPanel.GetPreferredSize feeds its current explicit
+                         * height back into the result when a final Dock=Fill label is
+                         * present.  Measure every AutoSize row instead so repeated tab
+                         * switches cannot grow the page or leave a blank lower half. */
+                        int[] rowHeights = new int[Math.Max(1, measuredTable.RowCount)];
+                        foreach (Control child in measuredTable.Controls)
+                        {
+                            int row = Math.Max(0, Math.Min(rowHeights.Length - 1, measuredTable.GetRow(child)));
+                            int availableWidth = Math.Max(1, child.Width);
+                            int desired = child.GetPreferredSize(new Size(availableWidth, 0)).Height + child.Margin.Vertical;
+                            rowHeights[row] = Math.Max(rowHeights[row], desired);
+                        }
+                        preferredHeight = measuredTable.Padding.Vertical + 2;
+                        foreach (int rowHeight in rowHeights) preferredHeight += rowHeight;
+                    }
+                    else
+                    {
+                        preferredHeight = content.GetPreferredSize(new Size(targetWidth, 0)).Height;
+                    }
+                    content.Height = Math.Max(1, preferredHeight);
+                    content.PerformLayout();
+                    page.AutoScrollMinSize = new Size(0, content.Height + Math.Max(12, bottomPadding));
+                    if (page.HorizontalScroll.Visible)
+                        page.AutoScrollPosition = new Point(0, Math.Abs(page.AutoScrollPosition.Y));
+                }
+                finally
+                {
+                    /* 首次显示或宽度真正变化时只恢复一次子控件布局；普通切页不重排。 */
+                    content.ResumeLayout(fullLayout);
+                    page.ResumeLayout(false);
+                    updating = false;
+                }
+                if (fullLayout)
+                {
+                    content.Invalidate(true);
+                    page.Invalidate(true);
+                }
+            };
+
+            /* 每页只在首次真正进入时执行一次强制布局；以后切页若宽度未变，只重绘，
+             * 不再反复 PerformLayout。窗口宽度改变时仍会重新计算一次。 */
+            scrollablePageLayouts[page] = delegate
+            {
+                bool force = !visibleLayoutCompleted;
+                visibleLayoutCompleted = true;
+                updateLayout(force);
+                if (!force)
+                {
+                    content.Invalidate(true);
+                    content.Update();
+                }
+            };
+            page.Resize += delegate { if (sideTabs.SelectedTab == page) updateLayout(false); };
+            page.HandleCreated += delegate { updateLayout(false); };
+            content.SizeChanged += delegate { if (!updating && sideTabs.SelectedTab == page) updateLayout(false); };
+            updateLayout(true);
+        }
+
         private void BuildInputPanel(TabPage page)
         {
-            TableLayoutPanel table = new TableLayoutPanel { Dock = DockStyle.Fill, Padding = new Padding(10), ColumnCount = 2, RowCount = 17, AutoScroll = true };
+            page.AutoScroll = true;
+            TableLayoutPanel table = new TableLayoutPanel { Dock = DockStyle.Top, AutoSize = false, Padding = new Padding(10), ColumnCount = 2, RowCount = 17, AutoScroll = false };
             table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 45));
             table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 55));
+            table.RowStyles.Clear();
+            for (int row = 0; row < 17; row++) table.RowStyles.Add(new RowStyle(SizeType.AutoSize));
             page.Controls.Add(table);
 
             knownAmplitudeCheck.Text = "已知参考幅度";
@@ -1106,14 +1247,16 @@ namespace NuclearMcaMonitor
                 Padding = new Padding(5)
             };
             table.Controls.Add(warning, 0, 16); table.SetColumnSpan(warning, 2);
+            ConfigureScrollablePage(page, table, 20);
             UpdateInputConfiguration();
         }
 
         private void BuildTestPanel(TabPage page)
         {
-            TableLayoutPanel layout = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 3, Padding = new Padding(7) };
+            TableLayoutPanel layout = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 4, Padding = new Padding(7) };
             layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 92));
-            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 72));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 82));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
             layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
             page.Controls.Add(layout);
 
@@ -1129,7 +1272,15 @@ namespace NuclearMcaMonitor
             buttons.Controls.Add(SmallButton("清空测试点", delegate { ClearTestPoints(); }));
             buttons.Controls.Add(SmallButton("导出报告CSV", delegate { ExportTestReport(false); }));
             buttons.Controls.Add(SmallButton("导出报告TXT", delegate { ExportTestReport(true); }));
+            buttons.Controls.Add(SmallButton("载入离线能谱", delegate { LoadOfflineSpectrum(); }));
             layout.Controls.Add(buttons, 0, 1);
+
+            replayStatusLabel.Dock = DockStyle.Fill;
+            replayStatusLabel.AutoEllipsis = true;
+            replayStatusLabel.ForeColor = TextMuted;
+            replayStatusLabel.Text = "离线回放：未载入（支持本软件导出的完整 CSV/TXT 能谱）";
+            replayStatusLabel.Padding = new Padding(2, 5, 2, 0);
+            layout.Controls.Add(replayStatusLabel, 0, 2);
 
             testPointGrid.Dock = DockStyle.Fill;
             testPointGrid.ReadOnly = true;
@@ -1157,32 +1308,35 @@ namespace NuclearMcaMonitor
             testPointGrid.Columns.Add("Resolution", "分辨率%");
             testPointGrid.Columns.Add("Pass", "通过率%");
             testPointGrid.Columns.Add("Rate", "计数率Hz");
-            layout.Controls.Add(testPointGrid, 0, 2);
+            layout.Controls.Add(testPointGrid, 0, 3);
         }
 
         private void BuildChart(TableLayoutPanel parent)
         {
             TableLayoutPanel host = new TableLayoutPanel { Dock = DockStyle.Fill, RowCount = 2, ColumnCount = 1, Margin = new Padding(0), BackColor = Surface };
-            host.RowStyles.Add(new RowStyle(SizeType.Absolute, 42F));
+            host.RowStyles.Add(new RowStyle(SizeType.Absolute, 52F));
             host.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             FlowLayoutPanel toolbar = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.LeftToRight, WrapContents = false, Padding = new Padding(10, 6, 8, 3), BackColor = Surface };
-            toolbar.Controls.Add(new Label { Text = "谱图视图", AutoSize = true, ForeColor = TextMuted, Margin = new Padding(0, 6, 8, 0) });
+            toolbar.Controls.Add(ToolbarLabel("谱图视图", 72, new Padding(0, 3, 8, 0)));
             cursorPeakSnapCheck.Text = "游标吸附峰值";
             cursorPeakSnapCheck.Checked = true;
-            cursorPeakSnapCheck.AutoSize = true;
+            cursorPeakSnapCheck.AutoSize = false;
+            cursorPeakSnapCheck.Size = new Size(132, 34);
+            cursorPeakSnapCheck.TextAlign = ContentAlignment.MiddleLeft;
+            cursorPeakSnapCheck.CheckAlign = ContentAlignment.MiddleLeft;
             cursorPeakSnapCheck.ForeColor = TextPrimary;
-            cursorPeakSnapCheck.Margin = new Padding(0, 5, 0, 0);
+            cursorPeakSnapCheck.Margin = new Padding(0, 3, 0, 0);
             cursorPeakSnapCheck.CheckedChanged += delegate { spectrumCursorPinned = false; HideSpectrumCursor(); };
             toolbar.Controls.Add(cursorPeakSnapCheck);
-            toolbar.Controls.Add(new Label { Text = "显示", AutoSize = true, ForeColor = TextMuted, Margin = new Padding(12, 6, 5, 0) });
+            toolbar.Controls.Add(ToolbarLabel("显示", 48, new Padding(12, 3, 5, 0)));
             ConfigureViewInput(viewStartInput, 0);
             ConfigureViewInput(viewEndInput, activeChannels - 1);
             toolbar.Controls.Add(viewStartInput);
-            toolbar.Controls.Add(new Label { Text = "–", AutoSize = true, ForeColor = TextMuted, Margin = new Padding(4, 6, 4, 0) });
+            toolbar.Controls.Add(ToolbarLabel("–", 16, new Padding(4, 3, 4, 0)));
             toolbar.Controls.Add(viewEndInput);
             toolbar.Controls.Add(SmallButton("应用范围", delegate { ApplySpectrumViewFromInputs(); }));
             toolbar.Controls.Add(SmallButton("峰区放大", delegate { ZoomToMainPeak(); }));
-            toolbar.Controls.Add(SmallButton("ROI范围", delegate { ApplySpectrumView(Decimal.ToInt32(roiStartInput.Value), Decimal.ToInt32(roiEndInput.Value) + 1); }));
+            toolbar.Controls.Add(SmallButton("ROI", delegate { ApplySpectrumView(Decimal.ToInt32(roiStartInput.Value), Decimal.ToInt32(roiEndInput.Value) + 1); }));
             toolbar.Controls.Add(SmallButton("全谱", delegate { ResetSpectrumView(); }));
             host.Controls.Add(toolbar, 0, 0);
 
@@ -1235,7 +1389,7 @@ namespace NuclearMcaMonitor
             input.Width = 76;
             input.ThousandsSeparator = true;
             input.Increment = 1;
-            input.Margin = new Padding(0, 1, 0, 0);
+            input.Margin = new Padding(0, 7, 0, 0);
         }
 
         private void ConfigureSpectrumCursor()
@@ -1904,7 +2058,8 @@ namespace NuclearMcaMonitor
             Button action = SmallButton(text, handler);
             action.AutoSize = false;
             action.Width = 64;
-            action.Height = 28;
+            action.Height = Math.Max(32, action.Font.Height + 14);
+            action.MinimumSize = new Size(64, action.Height);
             action.Margin = new Padding(0, 2, 0, 2);
             panel.Controls.Add(editor, 0, 0);
             panel.Controls.Add(action, 1, 0);
@@ -1916,8 +2071,7 @@ namespace NuclearMcaMonitor
             Button button = new Button
             {
                 Text = text,
-                AutoSize = true,
-                Height = 30,
+                AutoSize = false,
                 Margin = new Padding(3),
                 Padding = new Padding(7, 0, 7, 0),
                 FlatStyle = FlatStyle.Flat,
@@ -1925,11 +2079,28 @@ namespace NuclearMcaMonitor
                 ForeColor = Navy,
                 Cursor = Cursors.Hand
             };
+            Size textSize = TextRenderer.MeasureText(text, button.Font, Size.Empty, TextFormatFlags.SingleLine);
+            button.Width = Math.Max(72, textSize.Width + button.Padding.Horizontal + 14);
+            button.Height = Math.Max(34, button.Font.Height + 16);
+            button.MinimumSize = new Size(button.Width, button.Height);
             button.FlatAppearance.BorderColor = Border;
             button.FlatAppearance.MouseOverBackColor = TealSoft;
             button.FlatAppearance.MouseDownBackColor = Color.FromArgb(211, 237, 234);
             button.Click += handler;
             return button;
+        }
+
+        private static Label ToolbarLabel(string text, int width, Padding margin)
+        {
+            return new Label
+            {
+                Text = text,
+                AutoSize = false,
+                Size = new Size(width, 34),
+                TextAlign = ContentAlignment.MiddleLeft,
+                ForeColor = TextMuted,
+                Margin = margin
+            };
         }
 
         private void DrawSideTab(object sender, DrawItemEventArgs e)
@@ -2010,6 +2181,9 @@ namespace NuclearMcaMonitor
             firmwareWarningShown = false;
             firmwareMappingCompatible = false;
             Array.Clear(spectrum, 0, spectrum.Length);
+            offlineReplayActive = false;
+            offlineReplayPath = null;
+            replayStatusLabel.Text = "离线回放：未载入（支持本软件导出的完整 CSV/TXT 能谱）";
             rawSequenceValid = false;
             pcStreamGapSamples = 0U;
             histogramTransfer = false;
@@ -2151,12 +2325,17 @@ namespace NuclearMcaMonitor
                 "3. 比赛高计数率优先选4096道；精细峰形分析按需要选8192、16384或65536道。\r\n" +
                 "4. 设置比较器端实际阈值50–200 mV；固件会自动补偿1 kΩ/(9.1 kΩ+1 kΩ)分压。\r\n" +
                 "5. 设置ROI后读取FWHM、分辨率、计数率和处理效率；记录或导出CSV/TXT。\r\n\r\n" +
+                "左侧内容超过窗口高度时，使用页签右侧滚动条或鼠标滚轮查看底部说明。离线分析请先断开USB，再到“测试点与报告”载入本软件导出的完整能谱。\r\n\r\n" +
                 "CNV由模拟硬件产生，上位机不会控制CNV或任意GPIO。PH_RESTART仅由固件在完成ADC读取后产生。\r\n");
             AddManualPage(tabs, "道址与传输",
                 "4096道：MCU直接用AD7980原始码右移4位累计，仅定期传输4096项直方图，吞吐最高，推荐用于100 kcps连续测试。\r\n\r\n" +
                 "8192/16384/65536道：固件以带序号和CRC16的B16批次传输每个16位原始码，PC分别右移3/2/0位累计。道数越高，量化更细，但USB与PC负担更大。\r\n\r\n" +
                 "提高道数不会改善模拟前端、ADC噪声或事件统计决定的真实分辨率。导出文件始终保存所选道数的原始计数，不对能谱做插值或人为缩峰。\r\n\r\n" +
                 "谱图游标：默认在鼠标附近自动吸附局部峰，并显示精确计数、ADC电压、原始码范围、局部FWHM和分辨率；也可切换自由道址。左键锁定，右键或Esc隐藏。顶部可输入显示起止道、放大主峰/ROI、恢复全谱；鼠标滚轮以指针为中心连续缩放。\r\n");
+            AddManualPage(tabs, "离线能谱",
+                "在“测试点与报告”页点击“载入离线能谱”，可读取本软件导出的完整CSV/TXT直方图。支持4096、8192、16384和65536道；文件必须包含从0开始的每个连续道址，缺道、重复道或负计数会被拒绝。\r\n\r\n" +
+                "载入后可重新计算峰位、FWHM、分辨率、净峰面积和统计精度，也可缩放、使用游标并再次导出。\r\n\r\n" +
+                "静态能谱不包含同步测量时间窗、Busy增量和USB序列信息，因此CPS、脉冲通过率和处理效率显示为“离线不可用”。软件不会用文件时间或总计数伪造这些指标。重新连接USB或切换道址模式会退出离线状态。\r\n");
             AddManualPage(tabs, "指标说明",
                 "所有指标标题带ⓘ；鼠标悬停可看公式，点击可打开完整定义。\r\n\r\n" +
                 "峰位：ROI内扣除背景后的质心 μ=Σ(ch·Nnet)/ΣNnet 及其ADC端电压。\r\n" +
@@ -2341,6 +2520,19 @@ namespace NuclearMcaMonitor
                 ? currentMetrics.StatisticalPrecisionPercent.ToString("F4", CultureInfo.InvariantCulture) + " %"
                 : "--";
 
+            /* 静态直方图没有同步采集时间窗、Busy增量或USB序列信息。
+             * 离线回放只报告能由谱本身得到的峰位、FWHM、分辨率与统计精度。 */
+            if (offlineReplayActive)
+            {
+                rateValue.Text = "离线谱";
+                processingValue.Text = "离线不可用";
+                processingValue.ForeColor = TextMuted;
+                passRateValue.Text = "离线不可用";
+                passRateValue.ForeColor = TextMuted;
+                elapsedValue.Text = "离线不可用";
+                return;
+            }
+
             double windowSeconds = Double.NaN, windowRate = Double.NaN, windowPass = Double.NaN, windowEfficiency = Double.NaN, triggerAcceptance = Double.NaN;
             uint windowSamples = 0U, windowBusy = 0U;
             bool windowValid = measurementBaselineValid && InputMath.WindowMetrics(
@@ -2414,7 +2606,8 @@ namespace NuclearMcaMonitor
         {
             button.Text = text;
             button.Width = width;
-            button.Height = 30;
+            button.Height = Math.Max(32, button.Font.Height + 14);
+            button.MinimumSize = new Size(width, button.Height);
             button.Margin = new Padding(5, 0, 0, 0);
             button.FlatStyle = FlatStyle.Flat;
             button.Click += handler;
@@ -2589,6 +2782,15 @@ namespace NuclearMcaMonitor
 
         private void SetConnectedState(bool connected)
         {
+            if (connected && offlineReplayActive)
+            {
+                offlineReplayActive = false;
+                offlineReplayPath = null;
+                replayStatusLabel.Text = "离线回放：已退出，等待实时数据";
+                Array.Clear(spectrum, 0, spectrum.Length);
+                currentMetrics = new SpectrumMetrics();
+                chartDirty = true;
+            }
             controlGroup.Enabled = connected;
             recordButton.Enabled = connected;
             portBox.Enabled = !connected;
@@ -3155,6 +3357,9 @@ namespace NuclearMcaMonitor
                 pendingSerialText.Length = 0;
             }
             Array.Clear(spectrum, 0, spectrum.Length);
+            offlineReplayActive = false;
+            offlineReplayPath = null;
+            replayStatusLabel.Text = "离线回放：未载入（支持本软件导出的完整 CSV/TXT 能谱）";
             rawSequenceValid = false;
             pcStreamGapSamples = 0U;
             currentMetrics = new SpectrumMetrics();
@@ -3201,6 +3406,113 @@ namespace NuclearMcaMonitor
             recordButton.Text = "开始记录";
             recordLabel.Text = "未记录";
             recordLabel.ForeColor = Color.White;
+        }
+
+        private void LoadOfflineSpectrum()
+        {
+            if (serialPort != null && serialPort.IsOpen)
+            {
+                MessageBox.Show(this, "请先断开USB实时连接，再载入离线能谱，避免把历史直方图与实时事件混合。",
+                    "离线回放", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            OpenFileDialog dialog = new OpenFileDialog
+            {
+                Filter = "本软件导出的能谱 (*.csv;*.txt)|*.csv;*.txt|CSV文件 (*.csv)|*.csv|文本文件 (*.txt)|*.txt",
+                Title = "载入完整能谱"
+            };
+            if (dialog.ShowDialog(this) != DialogResult.OK) return;
+
+            try
+            {
+                long[] loaded;
+                int channels;
+                long total;
+                ParseOfflineSpectrum(dialog.FileName, out loaded, out channels, out total);
+                int[] modes = { 4096, 8192, 16384, 65536 };
+                int selectedIndex = Array.IndexOf(modes, channels);
+                if (selectedIndex < 0) throw new InvalidDataException("仅支持4096/8192/16384/65536道完整能谱。");
+
+                channelBox.SelectedIndex = selectedIndex;
+                ApplyChannelMode();
+                Array.Copy(loaded, spectrum, channels);
+                offlineReplayActive = true;
+                offlineReplayPath = dialog.FileName;
+                samplesValue.Text = total.ToString("N0", CultureInfo.InvariantCulture) + "（离线）";
+                busyValue.Text = "离线谱";
+                overrunValue.Text = "--";
+                dropsValue.Text = "--";
+                latestMeasuredRate = 0.0;
+                measurementBaselineValid = false;
+                measurementBaselinePending = false;
+                replayStatusLabel.Text = "离线回放：" + Path.GetFileName(dialog.FileName) + " | " + channels.ToString(CultureInfo.InvariantCulture) + "道";
+                liveSummaryLabel.Text = string.Format(CultureInfo.InvariantCulture,
+                    "离线回放 | {0}道 | 总计数 {1:N0} | CPS/通过率/处理效率不可由静态谱重建", channels, total);
+                chartDirty = true;
+                UpdateChart();
+                AppendTerminal("[PC] 已载入离线完整能谱：" + dialog.FileName + "。仅谱统计有效；CPS、通过率和处理效率不作推算。\r\n");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "离线能谱格式校验失败：" + ex.Message,
+                    "无法载入", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        internal static void ParseOfflineSpectrum(string path, out long[] counts, out int channels, out long total)
+        {
+            string[] lines = File.ReadAllLines(path, Encoding.UTF8);
+            int declaredChannels = 0;
+            int maximumChannel = -1;
+            int dataRows = 0;
+            total = 0;
+            counts = new long[SpectrumMetrics.HistogramChannels];
+            bool[] seen = new bool[SpectrumMetrics.HistogramChannels];
+
+            foreach (string original in lines)
+            {
+                string line = original.Trim();
+                if (line.Length == 0) continue;
+                if (line.StartsWith("#", StringComparison.Ordinal))
+                {
+                    Match match = Regex.Match(line, @"(?:^|[;\s])channels=(\d+)(?:;|\s|$)", RegexOptions.CultureInvariant);
+                    int parsed;
+                    if (match.Success && Int32.TryParse(match.Groups[1].Value, NumberStyles.Integer, CultureInfo.InvariantCulture, out parsed))
+                        declaredChannels = parsed;
+                    continue;
+                }
+                if (line.StartsWith("channel", StringComparison.OrdinalIgnoreCase)) continue;
+
+                char separator = line.IndexOf('\t') >= 0 ? '\t' : ',';
+                string[] fields = line.Split(separator);
+                int channel;
+                long count;
+                if (fields.Length < 2 ||
+                    !Int32.TryParse(fields[0].Trim(), NumberStyles.Integer, CultureInfo.InvariantCulture, out channel) ||
+                    !Int64.TryParse(fields[1].Trim(), NumberStyles.Integer, CultureInfo.InvariantCulture, out count))
+                    throw new InvalidDataException("发现非能谱数据行：" + line);
+                if (channel < 0 || channel >= SpectrumMetrics.HistogramChannels)
+                    throw new InvalidDataException("道址越界：" + channel.ToString(CultureInfo.InvariantCulture));
+                if (count < 0) throw new InvalidDataException("计数不能为负数。");
+                if (seen[channel]) throw new InvalidDataException("道址重复：" + channel.ToString(CultureInfo.InvariantCulture));
+                seen[channel] = true;
+                counts[channel] = count;
+                total = checked(total + count);
+                dataRows++;
+                if (channel > maximumChannel) maximumChannel = channel;
+            }
+
+            channels = declaredChannels > 0 ? declaredChannels : maximumChannel + 1;
+            int[] supported = { 4096, 8192, 16384, 65536 };
+            if (Array.IndexOf(supported, channels) < 0)
+                throw new InvalidDataException("无法确定受支持的完整道数；文件应含4096/8192/16384/65536个连续道址。");
+            if (dataRows != channels || maximumChannel != channels - 1)
+                throw new InvalidDataException("文件不是完整直方图：声明" + channels.ToString(CultureInfo.InvariantCulture) +
+                    "道，实际有效行" + dataRows.ToString(CultureInfo.InvariantCulture) + "。为避免错误统计，未进行补零。");
+            for (int i = 0; i < channels; i++)
+                if (!seen[i]) throw new InvalidDataException("缺少道址" + i.ToString(CultureInfo.InvariantCulture) + "。");
+            if (counts.Length != channels) Array.Resize(ref counts, channels);
         }
 
         private void ExportSpectrum()
@@ -3538,6 +3850,88 @@ namespace NuclearMcaMonitor
                 ((ScrollableMetricLabel)fwhmValue).NeedsScrolling, ((ScrollableMetricLabel)fwhmValue).ScrollOffset);
         }
 
+        internal void SaveLeftPanelPreview(string path, int tabIndex, bool scrollToBottom)
+        {
+            tabIndex = Math.Max(0, Math.Min(sideTabs.TabPages.Count - 1, tabIndex));
+            sideTabs.SelectedIndex = tabIndex;
+            TabPage page = sideTabs.SelectedTab;
+            page.AutoScrollPosition = scrollToBottom ? new Point(0, page.AutoScrollMinSize.Height) : Point.Empty;
+            page.PerformLayout();
+            sideTabs.PerformLayout();
+            Application.DoEvents();
+            using (Bitmap bitmap = new Bitmap(Math.Max(1, sideTabs.Width), Math.Max(1, sideTabs.Height)))
+            {
+                sideTabs.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
+                bitmap.Save(path, System.Drawing.Imaging.ImageFormat.Png);
+            }
+        }
+
+        internal string LeftPanelDiagnostics(int tabIndex)
+        {
+            tabIndex = Math.Max(0, Math.Min(sideTabs.TabPages.Count - 1, tabIndex));
+            TabPage page = sideTabs.TabPages[tabIndex];
+            int childBottom = 0;
+            if (page.Controls.Count > 0)
+            {
+                Control content = page.Controls[0];
+                foreach (Control child in content.Controls) childBottom = Math.Max(childBottom, child.Bottom);
+            }
+            string summary = string.Format(CultureInfo.InvariantCulture,
+                "tab={0}; client={1}x{2}; min={3}x{4}; displayHeight={5}; verticalVisible={6}; scrollY={7}; contentHeight={8}; directChildBottom={9}",
+                page.Text, page.ClientSize.Width, page.ClientSize.Height,
+                page.AutoScrollMinSize.Width, page.AutoScrollMinSize.Height,
+                page.DisplayRectangle.Height, page.VerticalScroll.Visible, -page.AutoScrollPosition.Y,
+                page.Controls.Count == 0 ? 0 : page.Controls[0].Height, childBottom);
+            if (page.Controls.Count == 0) return summary;
+            TableLayoutPanel diagnosticTable = page.Controls[0] as TableLayoutPanel;
+            if (diagnosticTable == null) return summary;
+            StringBuilder rows = new StringBuilder(summary);
+            foreach (Control child in diagnosticTable.Controls)
+            {
+                rows.AppendFormat(CultureInfo.InvariantCulture, "{0}row={1} type={2} top={3} height={4} pref={5}",
+                    Environment.NewLine, diagnosticTable.GetRow(child), child.GetType().Name,
+                    child.Top, child.Height, child.GetPreferredSize(new Size(child.Width, 0)).Height);
+            }
+            return rows.ToString();
+        }
+
+        internal string ValidateLeftPanelLayout()
+        {
+            for (int tabIndex = 0; tabIndex < 3; tabIndex++)
+            {
+                TabPage page = sideTabs.TabPages[tabIndex];
+                if (page.HorizontalScroll.Visible)
+                    return "horizontal scrollbar visible on tab " + tabIndex.ToString(CultureInfo.InvariantCulture);
+                if (page.Controls.Count == 0) return "missing content on tab " + tabIndex.ToString(CultureInfo.InvariantCulture);
+                Control content = page.Controls[0];
+                if (content.Right > page.ClientSize.Width)
+                    return "content exceeds viewport on tab " + tabIndex.ToString(CultureInfo.InvariantCulture);
+                foreach (Control child in content.Controls)
+                {
+                    FlowLayoutPanel flow = child as FlowLayoutPanel;
+                    if (flow == null) continue;
+                    foreach (Control item in flow.Controls)
+                    {
+                        if (item.Bottom > flow.ClientSize.Height + 1)
+                            return "button clipped on tab " + tabIndex.ToString(CultureInfo.InvariantCulture);
+                    }
+                }
+            }
+            return "PASS";
+        }
+
+        internal void ExerciseSideTabSwitchingForPreview()
+        {
+            /* 连续切页后再回到首页，覆盖实际用户遇到的“切回第一栏频闪/漏绘”。 */
+            for (int i = 0; i < 18; i++)
+            {
+                sideTabs.SelectedIndex = i % sideTabs.TabPages.Count;
+                Application.DoEvents();
+            }
+            sideTabs.SelectedIndex = 0;
+            Application.DoEvents();
+        }
+
         internal void ShowSpectrumCursorPreview()
         {
             spectrumChart.Update();
@@ -3837,6 +4231,28 @@ namespace NuclearMcaMonitor
                     throw new InvalidOperationException("short metric text must not need scrolling");
                 results.Add("metric value wheel scrolling with wrap clamp PASS");
             }
+
+            string offlinePath = Path.Combine(Path.GetTempPath(), "mca_offline_spectrum_self_test.csv");
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(offlinePath, false, new UTF8Encoding(false)))
+                {
+                    writer.WriteLine("channel,count");
+                    for (int i = 0; i < 4096; i++)
+                        writer.WriteLine(i.ToString(CultureInfo.InvariantCulture) + "," + (i == 321 ? "7" : "0"));
+                }
+                long[] offlineCounts;
+                int offlineChannels;
+                long offlineTotal;
+                MainForm.ParseOfflineSpectrum(offlinePath, out offlineCounts, out offlineChannels, out offlineTotal);
+                if (offlineChannels != 4096 || offlineCounts.Length != 4096 || offlineCounts[321] != 7 || offlineTotal != 7)
+                    throw new InvalidOperationException("offline complete-spectrum parser failed");
+                results.Add("offline full-spectrum CSV parser PASS");
+            }
+            finally
+            {
+                if (File.Exists(offlinePath)) File.Delete(offlinePath);
+            }
             File.WriteAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "SELF_TEST_RESULT.txt"), results.ToArray());
         }
     }
@@ -4009,6 +4425,37 @@ namespace NuclearMcaMonitor
                         Application.DoEvents();
                         form.SaveMetricScrollPreview("METRIC_SCROLL_AFTER.png");
                         File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "METRIC_DIAGNOSTICS.txt"), form.MetricScrollDiagnostics());
+                        form.Close();
+                    }
+                    File.WriteAllText(report, "PASS");
+                }
+                catch (Exception ex) { File.WriteAllText(report, "FAIL: " + ex); }
+                return;
+            }
+            if (args.Length == 1 && args[0] == "--render-left-preview")
+            {
+                string report = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LEFT_PREVIEW_RESULT.txt");
+                try
+                {
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    using (MainForm form = new MainForm())
+                    {
+                        form.StartPosition = FormStartPosition.Manual;
+                        form.Location = new Point(-2000, -2000);
+                        form.Size = form.MinimumSize;
+                        form.Show();
+                        Application.DoEvents();
+                        form.ExerciseSideTabSwitchingForPreview();
+                        form.SaveLeftPanelPreview(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LEFT_ACQUISITION_TOP.png"), 0, false);
+                        form.SaveLeftPanelPreview(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LEFT_ACQUISITION_BOTTOM.png"), 0, true);
+                        form.SaveLeftPanelPreview(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LEFT_INPUT_TOP.png"), 1, false);
+                        form.SaveLeftPanelPreview(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LEFT_INPUT_BOTTOM.png"), 1, true);
+                        form.SaveLeftPanelPreview(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LEFT_TEST.png"), 2, false);
+                        File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LEFT_DIAGNOSTICS.txt"),
+                            form.LeftPanelDiagnostics(0) + Environment.NewLine + form.LeftPanelDiagnostics(1));
+                        string layoutValidation = form.ValidateLeftPanelLayout();
+                        if (layoutValidation != "PASS") throw new InvalidOperationException(layoutValidation);
                         form.Close();
                     }
                     File.WriteAllText(report, "PASS");

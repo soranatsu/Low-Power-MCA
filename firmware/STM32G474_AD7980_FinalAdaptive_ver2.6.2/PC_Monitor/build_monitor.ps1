@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 $source = Join-Path $PSScriptRoot 'NuclearMcaMonitor.cs'
-$output = Join-Path $PSScriptRoot 'NuclearMcaMonitor_FinalAdaptive_v2.6.2.exe'
+$output = Join-Path $PSScriptRoot 'NuclearMcaMonitor_FinalAdaptive_v2.7.6.exe'
 $compiler = 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe'
 $chart = 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\System.Windows.Forms.DataVisualization.dll'
 
