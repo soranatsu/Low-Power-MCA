@@ -1,3 +1,5 @@
+> 历史审计记录：以下旧版 2 V 重映射、63 项队列及当时测试结论保留供追溯，不适用当前固件。当前规则为 2.5 V 全 16 位码空间、4096 道 `raw >> 4`、高道数 B16、1023 项有效队列；`range_overflows` 仅统计 raw=65535。实际操作以 [TEST_PROCEDURE.md](TEST_PROCEDURE.md) 和 [CONSISTENCY_AUDIT.md](CONSISTENCY_AUDIT.md) 为准，不能把以下 PASS 当作当前版本重新验证。
+
 # 固件安全、时序与数据处理审计
 
 审计日期：2026-08-06。结论：源码、CubeMX 配置、Debug/Release 编译、Release 反汇编和上位机自检均通过；工程已达到上板前的软件交付状态。尚未完成且不能由软件替代的是实板蜂鸣档、示波器和标准脉冲源验证。

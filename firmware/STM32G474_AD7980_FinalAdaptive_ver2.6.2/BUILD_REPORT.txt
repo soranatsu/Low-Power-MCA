@@ -1,3 +1,5 @@
+NOTE (2026-10-21): Historical record, preserved below. Not a new build or hardware-test result. Current identities, artifact checks and limitations: CONSISTENCY_AUDIT.md
+
 STM32G474_AD7980_FinalAdaptive v2.5.0 build report
 Date: 2026-08-19
 STM32CubeIDE: 1.16.0 Release incremental rebuild after app.c update
