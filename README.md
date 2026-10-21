@@ -262,7 +262,7 @@ stats clear
   <img src="docs/images/pc_monitor.png" alt="PC monitor" width="92%">
 </p>
 
-当前上位机：`NuclearMcaMonitor FinalAdaptive v2.6.2`
+当前上位机：`NuclearMcaMonitor FinalAdaptive v2.7.6`（`outputs/` 中 v2.6.2 为历史发布副本）
 
 主要功能：
 
@@ -277,7 +277,9 @@ stats clear
 - CSV / TXT / PNG / 测试报告导出。
 - 内置公式说明和安全提示。
 
-上位机自检结果：**18 / 18 PASS**，并覆盖空谱显示、游标峰吸附、局部 FWHM、四种道址原子切换、对数轴、长文本指标、通过率/处理效率颜色逻辑和固件兼容性检查。
+仓库历史自检记录：当前 `PC_Monitor/test_artifacts/v2.7.6/SELF_TEST_RESULT.txt` 列有 **19 项 PASS**（本次未重新运行 Windows 自检），并覆盖空谱显示、游标峰吸附、局部 FWHM、四种道址原子切换、对数轴、长文本指标、通过率/处理效率颜色逻辑和固件兼容性检查。
+
+当前上位机默认启用历史系统线性修正；新板或新工况应确认标定适用性，评估原始线性度时先关闭该修正并记录实测板端输入。
 
 配套固件应报告：
 
@@ -386,7 +388,7 @@ PPT 中记录的一次代表性满 16 位实测工况：
 ### Build firmware
 
 ```text
-1. Open firmware/STM32G474_AD7980_FinalAdaptive/STM32CubeIDE
+1. Open firmware/STM32G474_AD7980_FinalAdaptive_ver2.6.2/STM32CubeIDE
 2. Select Release configuration
 3. Clean Project
 4. Build Project
@@ -396,7 +398,7 @@ PPT 中记录的一次代表性满 16 位实测工况：
 Prebuilt images are provided under:
 
 ```text
-firmware/STM32G474_AD7980_FinalAdaptive/Firmware/
+firmware/STM32G474_AD7980_FinalAdaptive_ver2.6.2/Firmware/
 ├── STM32G474_AD7980_FinalAdaptive.hex
 └── STM32G474_AD7980_FinalAdaptive.bin
 ```
@@ -404,13 +406,13 @@ firmware/STM32G474_AD7980_FinalAdaptive/Firmware/
 ### Start PC monitor
 
 ```text
-firmware/STM32G474_AD7980_FinalAdaptive/PC_Monitor/启动上位机.bat
+firmware/STM32G474_AD7980_FinalAdaptive_ver2.6.2/PC_Monitor/启动上位机.bat
 ```
 
 or directly run:
 
 ```text
-NuclearMcaMonitor_FinalAdaptive_v2.6.2.exe
+NuclearMcaMonitor_FinalAdaptive_v2.7.6.exe
 ```
 
 ---
@@ -424,8 +426,8 @@ NuclearMcaMonitor_FinalAdaptive_v2.6.2.exe
 2. 确认 `PA0 / PA1 / PA4 / PA5 / PA6` 没有对地短路。
 3. 拔下 LCD/FPC，或确保冲突线保持高阻。
 4. 限流上电，依次检查 `3.3 V / +5VA / -5VA / 2.5V_REF`。
-5. 用示波器确认 `TRIG_RAW → Q_DELAY → CNV → Busy → 17×SCK → Restart` 的顺序。
-6. 烧录 `STM32G474_AD7980_FinalAdaptive.hex`。
+5. 烧录并校验 `Firmware/STM32G474_AD7980_FinalAdaptive.hex`，复位并核对固件身份。
+6. 接低频测试信号，用示波器确认 `TRIG_RAW → Q_DELAY → CNV → Busy → 17×SCK → Restart` 的顺序。
 7. USB 连接 PC，启动上位机。
 8. 发送/执行 `status`，确认固件版本与 2.5 V 映射兼容。
 9. 根据任务选择 4096–65536 道。
@@ -456,7 +458,7 @@ Low-Power-MCA/
 │       ├── resolution_vs_input.png
 │       └── power_consumption.png
 └── firmware/
-    └── STM32G474_AD7980_FinalAdaptive/
+    └── STM32G474_AD7980_FinalAdaptive_ver2.6.2/
         ├── Core/
         ├── Drivers/
         ├── Firmware/
@@ -526,6 +528,8 @@ processing_efficiency = processed_samples / busy_events × 100%
 
 ## 14. Documentation in the Firmware Package
 
+当前版本、镜像哈希、历史记录边界和未验证事项见 [`CONSISTENCY_AUDIT.md`](firmware/STM32G474_AD7980_FinalAdaptive_ver2.6.2/CONSISTENCY_AUDIT.md)。目录名不是固件版本；重新构建后需核对 Release 与 Firmware 导出副本。
+
 工程内已经包含进一步的实现与审计文档：
 
 - `README.md` — 固件与模式总览
@@ -535,8 +539,8 @@ processing_efficiency = processed_samples / busy_events × 100%
 - `CUBEMX_CONFIG.md` — CubeMX 配置说明
 - `TEST_PROCEDURE.md` — 上板与性能测试步骤
 - `SAFETY_CHECK_RESULT.txt` — 静态安全检查结果
-- `PC_Monitor/README.md` — v2.6.2 上位机功能与使用说明
-- `PC_Monitor/BUILD_REPORT.txt` — 上位机自检与构建结果
+- `PC_Monitor/README.md` — v2.7.6 上位机功能与使用说明
+- `PC_Monitor/BUILD_REPORT.txt` — 历史 v2.7.4 构建报告；新版自检记录见 test_artifacts
 
 ---
 

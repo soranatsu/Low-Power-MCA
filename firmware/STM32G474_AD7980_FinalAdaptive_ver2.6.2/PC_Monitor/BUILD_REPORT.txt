@@ -1,3 +1,5 @@
+NOTE (2026-10-21): Historical record, preserved below. Not a new build or hardware-test result. Current identities, artifact checks and limitations: ../CONSISTENCY_AUDIT.md
+
 NuclearMcaMonitor FinalAdaptive v2.7.4
 Build: PASS
 Output: NuclearMcaMonitor_FinalAdaptive_v2.7.4.exe

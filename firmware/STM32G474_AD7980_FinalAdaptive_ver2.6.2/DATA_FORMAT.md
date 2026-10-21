@@ -5,13 +5,15 @@
 固件用 `histogram[raw_code >> 4]++` 累计全部 AD7980 事件。上位机发送 `hist dump` 后接收：
 
 ```text
-# histogram_begin,4096
+channel,count
 0,<count>
 1,<count>
 ...
 4095,<count>
-# histogram_end
+# histogram end
 ```
+
+帧头和结束行以 `Core/Src/app.c` 的实际输出为准。`hist dump` 复制当前本地谱快照；采集可继续，因此需要固定测量窗时应先停外部脉冲并等待队列排空。高道数模式不提供该命令的本地谱。
 
 逐事件 USB stream 在4096道模式被固件强制关闭，以免通信影响100 kcps采集。
 

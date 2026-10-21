@@ -1,3 +1,5 @@
+> 历史审计记录：以下旧版 2 V 重映射、63 项队列及当时测试结论保留供追溯，不适用当前固件。当前规则为 2.5 V 全 16 位码空间、4096 道 `raw >> 4`、高道数 B16、1023 项有效队列；`range_overflows` 仅统计 raw=65535。实际操作以 [TEST_PROCEDURE.md](TEST_PROCEDURE.md) 和 [CONSISTENCY_AUDIT.md](CONSISTENCY_AUDIT.md) 为准，不能把以下 PASS 当作当前版本重新验证。
+
 # 文档结论与工程落实矩阵
 
 | 资料 | 与本工程有关的结论 | 工程落实 |
